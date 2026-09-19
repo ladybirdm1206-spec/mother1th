@@ -112,7 +112,7 @@
         <!-- 1行目：バッジ -->
         <div>
           <span id="banner-status-badge" class="inline-block bg-white text-[#006B6B] text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full tracking-wider shadow-sm whitespace-nowrap">
-            期間限定・募集中
+            まもなく募集開始
           </span>
         </div>
         <!-- 2行目：日程 -->
@@ -123,7 +123,7 @@
 
       <!-- 3行目：カウントダウン表示ユニット（白背景ミニカードで目に優しくクリアに） -->
       <div id="countdown-wrapper" class="flex items-center justify-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-medium flex-nowrap">
-        <span id="timer-label" class="text-[#E8F4F2] mr-0.5 text-[10.5px] min-[360px]:text-xs whitespace-nowrap shrink-0">募集締切まであと</span>
+        <span id="timer-label" class="text-[#E8F4F2] mr-0.5 text-[10.5px] min-[360px]:text-xs whitespace-nowrap shrink-0">募集開始まであと</span>
         
         <!-- 日 -->
         <div class="flex items-baseline bg-white/95 px-1.5 min-[360px]:px-2 py-0.5 rounded-md shadow-sm whitespace-nowrap shrink-0">
@@ -189,7 +189,7 @@
       </div>
 
       <!-- ファーストビューCTAボタン（メインティール #008080、ホバー時 #006B6B、白文字・太字） -->
-      <a href="#apply" class="inline-flex items-center justify-center bg-[#008080] hover:bg-[#006B6B] text-white font-bold text-lg px-9 py-4 rounded-full shadow-lg shadow-[#008080]/30 hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 w-full sm:w-auto">
+      <a href="#apply" class="inline-flex items-center justify-center bg-[#008080] hover:bg-[#006B6B] text-white font-bold text-base sm:text-lg px-7 sm:px-8 py-3 sm:py-3.5 rounded-full shadow-md shadow-[#008080]/30 hover:shadow-lg transform hover:-translate-y-0.5 transition duration-200 w-auto">
         <span>募集要項を見る</span>
       </a>
     </div>
@@ -586,7 +586,7 @@
 
         <!-- 募集要項を見るボタン（下部詳細 #apply へスクロール） -->
         <div class="mt-8 sm:mt-10 text-center">
-          <a href="#apply" class="inline-flex items-center justify-center bg-[#008080] hover:bg-[#006B6B] text-white font-bold text-base sm:text-lg px-9 py-4 rounded-full shadow-lg shadow-[#008080]/30 hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 w-full sm:w-auto">
+          <a href="#apply" class="inline-flex items-center justify-center bg-[#008080] hover:bg-[#006B6B] text-white font-bold text-base sm:text-lg px-7 sm:px-8 py-3 sm:py-3.5 rounded-full shadow-md shadow-[#008080]/30 hover:shadow-lg transform hover:-translate-y-0.5 transition duration-200 w-auto">
             <span>募集要項を見る</span>
           </a>
         </div>
@@ -962,10 +962,11 @@
     })();
     (function () {
       // 募集期間設定
-      // 申し込み開始日：9月23日 / 申し込み締切日：9月30日 23:59:59 (JST)
-      // 23日掲載時から締切日（9月30日 23:59:59）までのカウントダウン
+      // 申し込み開始日：9月23日 00:00:00 (JST)
+      // 申し込み締切日：9月30日 23:59:59 (JST)
       const currentYear = new Date().getFullYear();
-      const endDate = new Date(currentYear, 8, 30, 23, 59, 59, 999).getTime(); // 8 = 9月(0-indexed)
+      const startDate = new Date(currentYear, 8, 23, 0, 0, 0, 0).getTime(); // 8 = 9月(0-indexed) 23日 00:00:00
+      const endDate = new Date(currentYear, 8, 30, 23, 59, 59, 999).getTime(); // 8 = 9月 30日 23:59:59
 
       const badgeEl = document.getElementById("banner-status-badge");
       const labelEl = document.getElementById("timer-label");
@@ -978,8 +979,18 @@
       function updateCountdown() {
         const now = new Date().getTime();
 
-        if (now <= endDate) {
-          // 募集締切日までのカウントダウン
+        if (now < startDate) {
+          // ① 9月23日 00:00 より前（募集開始前・カウントダウン）
+          if (badgeEl) {
+            badgeEl.textContent = "まもなく募集開始";
+            badgeEl.className = "inline-block bg-white text-[#006B6B] text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full tracking-wider shadow-sm whitespace-nowrap";
+          }
+          if (labelEl) {
+            labelEl.textContent = "募集開始まであと";
+          }
+          renderDiff(startDate - now);
+        } else if (now <= endDate) {
+          // ② 9月23日 00:00 〜 9月30日 23:59:59（募集中：7日間）
           if (badgeEl) {
             badgeEl.textContent = "期間限定・募集中";
             badgeEl.className = "inline-block bg-white text-[#006B6B] text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full tracking-wider animate-pulse shadow-sm whitespace-nowrap";
@@ -989,7 +1000,7 @@
           }
           renderDiff(endDate - now);
         } else {
-          // 9月30日 23:59:59 終了後
+          // ③ 9月30日 23:59:59 終了後
           if (badgeEl) {
             badgeEl.textContent = "受付終了";
             badgeEl.className = "inline-block bg-white/80 text-[#006B6B] text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full tracking-wider whitespace-nowrap";
