@@ -112,18 +112,18 @@
         <!-- 1行目：バッジ -->
         <div>
           <span id="banner-status-badge" class="inline-block bg-white text-[#006B6B] text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full tracking-wider shadow-sm whitespace-nowrap">
-            まもなく募集開始
+            期間限定・募集中
           </span>
         </div>
         <!-- 2行目：日程 -->
-        <p class="text-[11px] min-[360px]:text-xs sm:text-sm font-bold tracking-tight sm:tracking-normal text-white whitespace-nowrap">
-          【9月23日(水) 募集開始 〜 9月30日(水) 23:59締切】
+        <p id="banner-period-text" class="text-[11px] min-[360px]:text-xs sm:text-sm font-bold tracking-tight sm:tracking-normal text-white whitespace-nowrap">
+          【9月23日(水) 募集開始 〜 10月1日(木) 23:59締切】
         </p>
       </div>
 
       <!-- 3行目：カウントダウン表示ユニット（白背景ミニカードで目に優しくクリアに） -->
       <div id="countdown-wrapper" class="flex items-center justify-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-medium flex-nowrap">
-        <span id="timer-label" class="text-[#E8F4F2] mr-0.5 text-[10.5px] min-[360px]:text-xs whitespace-nowrap shrink-0">募集開始まであと</span>
+        <span id="timer-label" class="text-[#E8F4F2] mr-0.5 text-[10.5px] min-[360px]:text-xs whitespace-nowrap shrink-0">募集締切まであと</span>
         
         <!-- 日 -->
         <div class="flex items-baseline bg-white/95 px-1.5 min-[360px]:px-2 py-0.5 rounded-md shadow-sm whitespace-nowrap shrink-0">
@@ -668,12 +668,21 @@
             <span class="inline-block whitespace-nowrap">あなたとお子さんの「新しい笑顔」を、</span><br class="sm:hidden" />
             <span class="inline-block whitespace-nowrap">ここから一緒に。</span>
           </p>
-          <p class="text-xs sm:text-sm text-[#333333]/70 mb-6">
-            【9月23日(水) 募集開始 〜 9月30日(水) 締切｜7日間限定】
+          <p id="mid-cta-period" class="text-xs sm:text-sm text-[#333333]/70 mb-6">
+            【9月23日(水) 募集開始 〜 10月1日(木) 締切】
           </p>
-          <a href="https://mosh.jp/products/1b762743-7867-48ab-8e98-5be7d9ad223d?openExternalBrowser=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-[#008080] hover:bg-[#006B6B] text-white font-bold text-base sm:text-lg px-9 py-4 rounded-full shadow-lg shadow-[#008080]/30 hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 w-full sm:w-auto">
-            <span>詳細・お申込みはこちら</span>
-          </a>
+          <!-- 募集中表示 -->
+          <div id="mid-cta-active">
+            <a href="https://mosh.jp/products/1b762743-7867-48ab-8e98-5be7d9ad223d?openExternalBrowser=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-[#008080] hover:bg-[#006B6B] text-white font-bold text-base sm:text-lg px-9 py-4 rounded-full shadow-lg shadow-[#008080]/30 hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 w-full sm:w-auto">
+              <span>詳細・お申込みはこちら</span>
+            </a>
+          </div>
+          <!-- 終了時表示（9/30 23:59以降に自動表示） -->
+          <div id="mid-cta-closed" class="hidden">
+            <div class="inline-flex items-center justify-center bg-stone-100 border border-stone-300 text-stone-500 font-bold text-base sm:text-lg px-8 py-3.5 rounded-full cursor-not-allowed select-none shadow-sm">
+              <span>今回の募集は終了いたしました</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -846,8 +855,7 @@
           <div class="py-3 sm:py-4 sm:grid sm:grid-cols-3 sm:gap-4">
             <dt class="font-bold text-[#006B6B]">募集期間</dt>
             <dd class="mt-0.5 sm:mt-1 text-[#333333] sm:col-span-2">
-              <span class="text-[#008080] font-bold">2026年9月23日(水) 〜 9月30日(水) 23:59</span><br />
-              <span class="text-xs sm:text-sm text-[#333333]/80">（7日間限定募集）</span>
+              <span class="text-[#008080] font-bold">2026年9月23日(水) 〜 10月1日(木) 23:59</span>
             </dd>
           </div>
           <div class="py-3 sm:py-4 sm:grid sm:grid-cols-3 sm:gap-4">
@@ -880,15 +888,34 @@
 
         <!-- メイン申込アクションボタン（主要CTA：ゴールドアクセント #B98232 / ホバー #9F6E28 / 自然なシャドウ） -->
         <div class="mt-6 sm:mt-10 text-center">
-          <a href="https://mosh.jp/products/1b762743-7867-48ab-8e98-5be7d9ad223d?openExternalBrowser=1" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex flex-col items-center justify-center bg-[#B98232] hover:bg-[#9F6E28] text-white font-bold text-lg sm:text-xl px-12 py-3.5 sm:py-4 rounded-full shadow-md shadow-[#B98232]/25 hover:shadow-lg hover:shadow-[#9F6E28]/30 transform hover:-translate-y-0.5 transition duration-200 text-center leading-tight">
-            <span class="block">「母-Mother」</span>
-            <span class="block text-base sm:text-lg mt-0.5 sm:mt-1">今すぐ申込む</span>
-          </a>
-          <div class="mt-3 text-center">
-            <p class="text-xs text-[#333333]/70 inline-block text-left leading-relaxed">
-              <span class="inline-block whitespace-nowrap">※定員に達し次第、予告なく受付を終了する</span><br />
-              <span class="inline-block whitespace-nowrap pl-[1em]" style="padding-left: 1em;">場合がございます。</span>
-            </p>
+          <!-- 募集中表示 -->
+          <div id="main-cta-active">
+            <a href="https://mosh.jp/products/1b762743-7867-48ab-8e98-5be7d9ad223d?openExternalBrowser=1" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex flex-col items-center justify-center bg-[#B98232] hover:bg-[#9F6E28] text-white font-bold text-lg sm:text-xl px-12 py-3.5 sm:py-4 rounded-full shadow-md shadow-[#B98232]/25 hover:shadow-lg hover:shadow-[#9F6E28]/30 transform hover:-translate-y-0.5 transition duration-200 text-center leading-tight">
+              <span class="block">「母-Mother」</span>
+              <span class="block text-base sm:text-lg mt-0.5 sm:mt-1">今すぐ申込む</span>
+            </a>
+            <div class="mt-3 text-center">
+              <p class="text-xs text-[#333333]/70 inline-block text-left leading-relaxed">
+                <span class="inline-block whitespace-nowrap">※定員に達し次第、予告なく受付を終了する</span><br />
+                <span class="inline-block whitespace-nowrap pl-[1em]" style="padding-left: 1em;">場合がございます。</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 終了時表示（9/30 23:59以降に自動表示） -->
+          <div id="main-cta-closed" class="hidden">
+            <div class="inline-block max-w-md w-full bg-white border-2 border-[#008080]/30 rounded-2xl p-6 sm:p-8 text-center shadow-md">
+              <div class="inline-block bg-stone-500 text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3.5 tracking-wider shadow-sm">
+                受付終了
+              </div>
+              <p class="font-mincho font-bold text-lg sm:text-xl text-[#006B6B] mb-2 leading-snug">
+                今回の募集は終了いたしました
+              </p>
+              <p class="text-xs sm:text-sm text-[#3D4141] leading-relaxed">
+                たくさんのご応募・お申込みをいただき、誠にありがとうございました。<br />
+                次回の募集案内は公式LINE等でお知らせいたします。
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -928,6 +955,15 @@
   </div>
 
   <script>
+    // 募集期間設定（JST基準）
+    // 申し込み開始日：9月23日 00:00:00 (JST)
+    // 申し込み締切日：10月1日 23:59:59 (JST) ※1日延長
+    // ※FORCE_CLOSED を true に変更すると、日時にかかわらず即座に募集終了表示へ切り替えられます
+    const FORCE_CLOSED = false;
+    const currentYear = new Date().getFullYear();
+    const startDate = new Date(currentYear, 8, 23, 0, 0, 0, 0).getTime(); // 8 = 9月(0-indexed) 23日 00:00:00
+    const endDate = new Date(currentYear, 9, 1, 23, 59, 59, 999).getTime(); // 9 = 10月(0-indexed) 1日 23:59:59
+
     // スマホ画面下部 追従（固定）申込ボタンの表示・非表示制御
     (function () {
       const floatingCta = document.getElementById("floating-cta");
@@ -935,12 +971,23 @@
 
       function updateFloatingCta() {
         if (!floatingCta) return;
+        const now = new Date().getTime();
+        const isClosed = FORCE_CLOSED || (now > endDate);
+
+        // 募集終了後は追従ボタンを非表示化
+        if (isClosed) {
+          floatingCta.classList.add("translate-y-full", "opacity-0", "pointer-events-none");
+          floatingCta.classList.remove("translate-y-0", "opacity-100");
+          floatingCta.style.display = "none";
+          return;
+        } else {
+          floatingCta.style.display = "";
+        }
+
         const scrollY = window.scrollY || window.pageYOffset;
-        
         let inApplyZone = false;
         if (applySection) {
           const rect = applySection.getBoundingClientRect();
-          // #applyの上端が画面内に入った（画面上部から見て残り75%以下）または通り過ぎた場合
           if (rect.top <= window.innerHeight * 0.75) {
             inApplyZone = true;
           }
@@ -959,27 +1006,62 @@
       window.addEventListener("scroll", updateFloatingCta, { passive: true });
       window.addEventListener("resize", updateFloatingCta, { passive: true });
       updateFloatingCta();
+      window.__updateFloatingCta = updateFloatingCta;
     })();
-    (function () {
-      // 募集期間設定
-      // 申し込み開始日：9月23日 00:00:00 (JST)
-      // 申し込み締切日：9月30日 23:59:59 (JST)
-      const currentYear = new Date().getFullYear();
-      const startDate = new Date(currentYear, 8, 23, 0, 0, 0, 0).getTime(); // 8 = 9月(0-indexed) 23日 00:00:00
-      const endDate = new Date(currentYear, 8, 30, 23, 59, 59, 999).getTime(); // 8 = 9月 30日 23:59:59
 
+    // ヘッダータイマー ＆ 各申込みボタンの自動切り替え制御
+    (function () {
       const badgeEl = document.getElementById("banner-status-badge");
       const labelEl = document.getElementById("timer-label");
       const wrapperEl = document.getElementById("countdown-wrapper");
+      const bannerPeriodEl = document.getElementById("banner-period-text");
       const daysEl = document.getElementById("timer-days");
       const hoursEl = document.getElementById("timer-hours");
       const minutesEl = document.getElementById("timer-minutes");
       const secondsEl = document.getElementById("timer-seconds");
 
+      const mainActive = document.getElementById("main-cta-active");
+      const mainClosed = document.getElementById("main-cta-closed");
+      const midActive = document.getElementById("mid-cta-active");
+      const midClosed = document.getElementById("mid-cta-closed");
+      const midPeriod = document.getElementById("mid-cta-period");
+
+      function setCallToActionState(isClosed) {
+        if (isClosed) {
+          if (mainActive) mainActive.classList.add("hidden");
+          if (mainClosed) mainClosed.classList.remove("hidden");
+          if (midActive) midActive.classList.add("hidden");
+          if (midClosed) midClosed.classList.remove("hidden");
+          if (midPeriod) midPeriod.textContent = "【今回の募集は終了いたしました】";
+        } else {
+          if (mainActive) mainActive.classList.remove("hidden");
+          if (mainClosed) mainClosed.classList.add("hidden");
+          if (midActive) midActive.classList.remove("hidden");
+          if (midClosed) midClosed.classList.add("hidden");
+        }
+      }
+
       function updateCountdown() {
         const now = new Date().getTime();
+        const isClosed = FORCE_CLOSED || (now > endDate);
 
-        if (now < startDate) {
+        if (isClosed) {
+          // ③ 10月1日 23:59:59 終了後（または手動終了時）
+          if (badgeEl) {
+            badgeEl.textContent = "受付終了";
+            badgeEl.className = "inline-block bg-white/80 text-[#006B6B] text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full tracking-wider whitespace-nowrap";
+          }
+          if (bannerPeriodEl) {
+            bannerPeriodEl.textContent = "【受付終了】";
+          }
+          if (wrapperEl) {
+            wrapperEl.innerHTML = '<span class="bg-white/90 px-3 py-1 rounded-md text-[#006B6B] text-xs font-medium">今回の募集は終了いたしました</span>';
+          }
+          setCallToActionState(true);
+          if (window.__updateFloatingCta) {
+            window.__updateFloatingCta();
+          }
+        } else if (now < startDate) {
           // ① 9月23日 00:00 より前（募集開始前・カウントダウン）
           if (badgeEl) {
             badgeEl.textContent = "まもなく募集開始";
@@ -989,8 +1071,9 @@
             labelEl.textContent = "募集開始まであと";
           }
           renderDiff(startDate - now);
-        } else if (now <= endDate) {
-          // ② 9月23日 00:00 〜 9月30日 23:59:59（募集中：7日間）
+          setCallToActionState(false);
+        } else {
+          // ② 9月23日 00:00 〜 10月1日 23:59:59（募集中：延長）
           if (badgeEl) {
             badgeEl.textContent = "期間限定・募集中";
             badgeEl.className = "inline-block bg-white text-[#006B6B] text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full tracking-wider animate-pulse shadow-sm whitespace-nowrap";
@@ -999,15 +1082,7 @@
             labelEl.textContent = "募集締切まであと";
           }
           renderDiff(endDate - now);
-        } else {
-          // ③ 9月30日 23:59:59 終了後
-          if (badgeEl) {
-            badgeEl.textContent = "受付終了";
-            badgeEl.className = "inline-block bg-white/80 text-[#006B6B] text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full tracking-wider whitespace-nowrap";
-          }
-          if (wrapperEl) {
-            wrapperEl.innerHTML = '<span class="bg-white/90 px-3 py-1 rounded-md text-[#006B6B] text-xs font-medium">今回の募集は終了いたしました</span>';
-          }
+          setCallToActionState(false);
         }
       }
 
