@@ -62,15 +62,15 @@
       color: var(--ink);
       font-family: var(--sans);
       font-size: 16px;
-      line-height: 1.95;
-      letter-spacing: .02em;
+      line-height: 1.625;
       overflow-wrap: anywhere;
       line-break: strict;
     }
     [hidden] { display: none !important; }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; }
-    p { margin: 0 0 1.1em; }
+    p { margin: 0 0 24px; }
+    @media (min-width: 640px) { body { font-size: 18px; } .h2, .hero h1 { line-height: 1.25; } }
     p:last-child { margin-bottom: 0; }
     strong { color: var(--teal-deep); font-weight: 700; }
     .marker { background: linear-gradient(transparent 62%, rgba(0, 128, 128, .16) 62%); font-weight: 700; color: var(--teal-deep); }
@@ -79,8 +79,8 @@
 
     .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
     .container-wide { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 72px 0; }
-    @media (min-width: 768px) { .section { padding: 104px 0; } }
+    .section { padding: 64px 0; }
+    @media (min-width: 640px) { .section { padding: 96px 0; } }
     .bg-white { background: var(--white); }
     .bg-cream { background: var(--cream); }
     .bg-mint { background: var(--mint); }
@@ -94,12 +94,12 @@
     .label::before, .label::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .5; }
     .h2 {
       font-family: var(--mincho); font-weight: 700; color: var(--teal-deep);
-      font-size: clamp(21px, 5.6vw, 32px); line-height: 1.6; letter-spacing: .04em;
+      font-size: clamp(20px, 5.4vw, 30px); line-height: 1.375;
       text-align: center; margin: 0 0 40px;
     }
     .h3 {
       font-family: var(--mincho); font-weight: 700; color: var(--teal-deep);
-      font-size: clamp(19px, 4.8vw, 25px); line-height: 1.6; text-align: center; margin: 0 0 28px;
+      font-size: clamp(19px, 4.8vw, 25px); line-height: 1.375; text-align: center; margin: 0 0 28px;
     }
     .lead-center { text-align: center; }
 
@@ -125,7 +125,7 @@
     .badge-prep {
       display: inline-block; padding: 2px 12px; border-radius: 999px;
       background: #FFF2DE; color: #A35A12; border: 1px solid #F1C88E;
-      font-size: 12px; font-weight: 700; letter-spacing: .08em; line-height: 1.8;
+      font-size: 12px; font-weight: 700; letter-spacing: .08em; line-height: 1.625;
     }
     .badge-tmp {
       display: inline-block; margin-left: 8px; padding: 0 8px; border-radius: 6px; vertical-align: 2px;
@@ -166,36 +166,40 @@
     }
     .hero h1 {
       font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
-      font-size: clamp(30px, 8.6vw, 54px); line-height: 1.5; letter-spacing: .06em;
+      font-size: clamp(30px, 8.6vw, 54px); line-height: 1.375; letter-spacing: .02em;
       margin: 0 0 28px;
     }
     .hero h1 .accent { color: var(--teal); }
-    .hero-lead { font-size: clamp(15px, 4vw, 18px); line-height: 2.05; margin-bottom: 30px; }
+    .hero-lead { font-size: clamp(15px, 4vw, 18px); line-height: 1.625; margin-bottom: 30px; }
     .hero-course {
       display: inline-block; text-align: center;
       background: #fff; border: 1px solid rgba(0, 128, 128, .25); border-radius: var(--radius);
       padding: 18px 22px; margin-bottom: 34px; box-shadow: var(--shadow);
     }
     .hero-course .name { font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 20px; letter-spacing: .1em; }
-    .hero-course .desc { font-size: 14px; color: var(--ink-soft); line-height: 1.9; margin-top: 6px; }
+    .hero-course .desc { font-size: 14px; color: var(--ink-soft); line-height: 1.625; margin-top: 6px; }
     .hero-teacher {
-      display: inline-flex; align-items: center; gap: 12px; margin-top: 30px;
-      font-size: 13px; color: var(--ink-soft); text-align: left; line-height: 1.6;
+      display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 36px;
+      font-size: 13px; color: var(--ink-soft); text-align: center; line-height: 1.6;
     }
-    .hero-teacher img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0, 0, 0, .12); }
-    .hero-teacher b { display: block; color: var(--teal-deep); font-family: var(--mincho); font-size: 16px; }
+    .hero-teacher img {
+      width: 150px; height: 150px; border-radius: 50%; object-fit: cover; object-position: center 30%;
+      border: 4px solid #fff; box-shadow: 0 0 0 6px rgba(0, 128, 128, .14), var(--shadow);
+    }
+    .hero-teacher b { display: block; color: var(--teal-deep); font-family: var(--mincho); font-size: 18px; }
+    @media (min-width: 640px) { .hero-teacher img { width: 170px; height: 170px; } }
 
     /* ========== 共感 ========== */
     .quote-list { margin: 30px 0; display: grid; gap: 12px; }
     .quote {
       position: relative; background: var(--cream); border-radius: 14px; padding: 14px 20px 14px 22px;
-      font-family: var(--mincho); font-weight: 600; color: var(--teal-deep); font-size: 17px; line-height: 1.8;
+      font-family: var(--mincho); font-weight: 600; color: var(--teal-deep); font-size: 17px; line-height: 1.625;
       border-left: 4px solid rgba(0, 128, 128, .45);
     }
     .callout {
       margin-top: 36px; text-align: center; padding: 28px 20px; border-radius: var(--radius);
       background: var(--mint);
-      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: clamp(18px, 4.8vw, 22px); line-height: 1.8;
+      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: clamp(18px, 4.8vw, 22px); line-height: 1.625;
     }
     .callout small { display: block; font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--ink); margin-top: 6px; }
 
@@ -205,7 +209,7 @@
       padding: 30px 22px; margin: 32px 0; text-align: center;
     }
     .insight-box .kicker { font-size: 13px; color: var(--teal); font-weight: 700; letter-spacing: .1em; margin-bottom: 8px; }
-    .insight-box .big { font-family: var(--mincho); font-weight: 800; color: var(--teal-deep); font-size: clamp(19px, 5vw, 24px); line-height: 1.7; margin: 0; }
+    .insight-box .big { font-family: var(--mincho); font-weight: 800; color: var(--teal-deep); font-size: clamp(19px, 5vw, 24px); line-height: 1.5; margin: 0; }
     .belief-list { list-style: none; padding: 0; margin: 20px 0; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
     .belief-list li {
       background: #fff; border: 1px dashed rgba(0, 107, 107, .4); border-radius: 999px;
@@ -216,31 +220,29 @@
     }
     .note-card .final {
       font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
-      font-size: clamp(22px, 6vw, 30px); line-height: 1.6; margin-top: 10px;
+      font-size: clamp(22px, 6vw, 30px); line-height: 1.5; margin-top: 10px;
     }
 
     /* ========== 講師 ========== */
-    .teacher-head { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; margin-bottom: 34px; }
-    .teacher-photo { position: relative; width: 220px; height: 220px; flex-shrink: 0; }
-    .teacher-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; border-radius: 50%; box-shadow: 0 0 0 8px rgba(0, 128, 128, .14), var(--shadow); }
+    .teacher-head { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; margin-bottom: 34px; }
+    .teacher-photo { position: relative; width: 148px; height: 148px; flex-shrink: 0; }
+    .teacher-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 6px rgba(0, 128, 128, .14), var(--shadow); }
     .teacher-photo .tag {
-      position: absolute; right: 10px; bottom: 10px; background: var(--teal); color: #fff;
-      font-size: 13px; font-weight: 700; padding: 2px 14px; border-radius: 999px; letter-spacing: .1em;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+      position: absolute; right: 0; bottom: 4px; background: var(--teal); color: #fff;
+      font-size: 11px; font-weight: 700; padding: 1px 10px; border-radius: 999px; letter-spacing: .1em;
     }
     .teacher-head .label { margin-bottom: 6px; }
     .teacher-head .h2 { margin-bottom: 4px; }
     .teacher-head .by { font-size: 14px; color: var(--ink-soft); }
     @media (min-width: 640px) {
-      .teacher-head { flex-direction: row; text-align: left; gap: 36px; }
-      .teacher-photo { width: 240px; height: 240px; }
+      .teacher-head { flex-direction: row; text-align: left; gap: 28px; }
       .teacher-head .label { justify-content: flex-start; }
       .teacher-head .label::after { display: none; }
       .teacher-head .h2 { text-align: left; }
     }
     .message-highlight {
       margin: 30px 0; padding: 26px 22px; border-radius: var(--radius); background: var(--mint);
-      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: clamp(17px, 4.6vw, 21px); line-height: 1.9; text-align: center;
+      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: clamp(17px, 4.6vw, 21px); line-height: 1.625; text-align: center;
     }
 
     /* 動画枠 */
@@ -269,7 +271,7 @@
     /* ========== 講座内容 ========== */
     .center-question {
       text-align: center; margin: 28px 0; font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
-      font-size: clamp(20px, 5.4vw, 26px); line-height: 1.7;
+      font-size: clamp(20px, 5.4vw, 26px); line-height: 1.5;
     }
     .overview { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 40px 0 64px; }
     @media (min-width: 640px) { .overview { grid-template-columns: repeat(4, 1fr); } }
@@ -298,7 +300,7 @@
     .step-card .meta { font-size: 12px; color: var(--teal); font-weight: 700; letter-spacing: .12em; }
     .step-card h4 { margin: 2px 0 6px; font-family: var(--mincho); font-size: 18px; color: var(--teal-deep); line-height: 1.5; }
     .step-card h4 small { font-family: var(--sans); font-size: 13px; color: var(--ink-soft); font-weight: 500; margin-left: 4px; }
-    .step-card p { font-size: 15px; line-height: 1.85; }
+    .step-card p { font-size: 15px; line-height: 1.625; }
 
     .bonus {
       margin-top: 36px; position: relative; border-radius: var(--radius); padding: 28px 22px 24px; text-align: center;
@@ -324,7 +326,7 @@
     .daily span { background: var(--cream); border-radius: 999px; padding: 4px 14px; font-size: 14px; }
     .future-final {
       text-align: center; margin-top: 36px; font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
-      font-size: clamp(20px, 5.4vw, 26px); line-height: 1.7;
+      font-size: clamp(20px, 5.4vw, 26px); line-height: 1.5;
     }
 
     /* ========== 受講者の声 ========== */
@@ -344,31 +346,31 @@
     .voice-meta { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
     .voice-meta b { display: block; color: var(--teal-deep); font-size: 15px; }
     .voice h4 { margin: 0 0 8px; font-family: var(--mincho); color: var(--teal-deep); font-size: 17px; line-height: 1.6; }
-    .voice p { font-size: 14px; color: #8A867E; line-height: 1.85; }
+    .voice p { font-size: 14px; color: #8A867E; line-height: 1.625; }
     .voices-note { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 22px; }
 
     /* ========== おすすめ ========== */
     .checklist { list-style: none; margin: 0 auto; padding: 0; max-width: 620px; display: grid; gap: 12px; }
     .checklist li {
-      position: relative; background: #fff; border-radius: 12px; padding: 14px 18px 14px 52px; line-height: 1.75; font-weight: 500;
+      position: relative; background: #fff; border-radius: 12px; padding: 14px 18px 14px 52px; line-height: 1.625; font-weight: 500;
       box-shadow: 0 4px 14px -10px rgba(0, 80, 80, .35);
     }
     .checklist li::before {
       content: ""; position: absolute; left: 18px; top: 50%; width: 22px; height: 22px; margin-top: -11px; border-radius: 6px;
       background: var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 16px no-repeat;
     }
-    .checklist-after { text-align: center; margin-top: 28px; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.8; }
+    .checklist-after { text-align: center; margin-top: 28px; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.625; }
 
     /* ========== 締めのメッセージ ========== */
     .closing-photo { margin: 0 0 40px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
     .closing-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 40% 30%; }
     .voice-quotes { display: grid; gap: 12px; margin: 28px 0; }
     .voice-quotes p {
-      margin: 0; text-align: center; font-family: var(--mincho); font-weight: 600; color: var(--teal-deep); font-size: 17px; line-height: 1.8;
+      margin: 0; text-align: center; font-family: var(--mincho); font-weight: 600; color: var(--teal-deep); font-size: 17px; line-height: 1.625;
       background: var(--cream); border-radius: 14px; padding: 14px 16px;
     }
     .closing-final { text-align: center; margin-top: 40px; }
-    .closing-final .catch { font-family: var(--mincho); font-weight: 800; color: var(--teal-deep); font-size: clamp(22px, 6vw, 30px); line-height: 1.6; margin-bottom: 14px; }
+    .closing-final .catch { font-family: var(--mincho); font-weight: 800; color: var(--teal-deep); font-size: clamp(22px, 6vw, 30px); line-height: 1.5; margin-bottom: 14px; }
 
     /* ========== FAQ ========== */
     .faq { display: grid; gap: 12px; }
@@ -388,26 +390,26 @@
     }
     .faq details[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
     .faq summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 14px; }
-    .faq .answer { padding: 0 20px 20px 54px; font-size: 15px; line-height: 1.9; }
+    .faq .answer { padding: 0 20px 20px 54px; font-size: 15px; line-height: 1.625; }
     .faq .answer b { color: var(--teal-deep); }
 
     /* ========== 募集要項 ========== */
     .entry-card { background: #fff; border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
     .entry-head { background: var(--teal-deep); color: #fff; text-align: center; padding: 26px 18px; }
     .entry-head .course { font-family: var(--mincho); font-weight: 800; font-size: 24px; letter-spacing: .12em; }
-    .entry-head .sub { font-size: 14px; opacity: .9; line-height: 1.8; margin-top: 4px; }
+    .entry-head .sub { font-size: 14px; opacity: .9; line-height: 1.625; margin-top: 4px; }
     .entry-list { margin: 0; padding: 8px 22px; }
     .entry-list > div { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 16px 0; border-bottom: 1px solid var(--line); }
     .entry-list > div:last-child { border-bottom: 0; }
     @media (min-width: 640px) { .entry-list > div { grid-template-columns: 150px 1fr; gap: 16px; } }
     .entry-list dt { font-size: 13px; font-weight: 700; color: var(--teal); letter-spacing: .08em; }
-    .entry-list dd { margin: 0; font-weight: 500; line-height: 1.8; }
+    .entry-list dd { margin: 0; font-weight: 500; line-height: 1.625; }
     .price-regular { color: var(--ink-soft); text-decoration: line-through; font-size: 14px; margin-right: 8px; }
     .price-special { color: var(--accent); font-weight: 800; font-size: 24px; font-family: var(--mincho); }
     .entry-foot { padding: 24px 22px 30px; text-align: center; background: var(--cream); }
-    .entry-foot .msg { font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .entry-foot .msg { font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.625; margin-bottom: 16px; }
     .entry-foot .small { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
-    .entry-thanks { text-align: center; margin-top: 36px; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.8; }
+    .entry-thanks { text-align: center; margin-top: 36px; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.625; }
 
     /* 状態によって表示を切り替える（JSで body[data-state] を設定） */
     [data-when] { display: none; }
@@ -418,7 +420,7 @@
     body:not([data-state])    [data-when~="prep"] { display: revert; }
 
     /* ========== フッター ========== */
-    .footer { background: var(--teal-deep); color: rgba(255, 255, 255, .88); text-align: center; padding: 40px 20px; font-size: 13px; line-height: 1.9; }
+    .footer { background: var(--teal-deep); color: rgba(255, 255, 255, .88); text-align: center; padding: 40px 20px; font-size: 13px; line-height: 1.625; }
     body[data-state="open"] .footer { padding-bottom: 110px; }
     .footer .course { font-family: var(--mincho); font-weight: 700; font-size: 18px; color: #fff; letter-spacing: .1em; }
     .footer small { display: block; margin-top: 16px; opacity: .7; }
@@ -470,8 +472,10 @@
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </a>
       </div>
+      <!-- ▼ ひら先生の写真：v2/images/hirasensei_profile.jpg を同じ名前の写真で上書きすると差し替わります
+           （正方形・600×600px 以上・顔が中央やや上にある写真がおすすめです） -->
       <div class="hero-teacher">
-        <img src="../hirasensei.jpg" alt="" width="52" height="52">
+        <img src="images/hirasensei_profile.jpg" alt="ひら先生" width="170" height="170">
         <div>講師・伴走者<b>ひら先生</b></div>
       </div>
     </div>
@@ -542,10 +546,8 @@
   <section class="section bg-white" id="message">
     <div class="container">
       <div class="teacher-head">
-        <!-- ▼ ひら先生の写真：v2/images/hirasensei_profile.jpg を同じ名前の写真で上書きすると差し替わります
-             （正方形・600×600px 以上・顔が中央やや上にある写真がおすすめです） -->
         <div class="teacher-photo">
-          <img src="images/hirasensei_profile.jpg" alt="伴走者 ひら先生" width="240" height="240">
+          <img src="../hirasensei.jpg" alt="伴走者 ひら先生" width="148" height="148">
           <span class="tag">講師</span>
         </div>
         <div>
@@ -665,7 +667,7 @@
 
       <div class="bonus">
         <span class="ribbon">SPECIAL BONUS</span>
-        <h4>【特別特典】<br class="sp">個別セッション（1回）プレゼント</h4>
+        <h4>【特別特典】<br class="sp">個別セッション（1回）<br class="sp">プレゼント</h4>
         <p>講座の学びをあなたの状況に合わせ、全体では話しきれない悩みや想いも含めてじっくり個別にお話しできる特別な時間です。</p>
       </div>
 
@@ -881,7 +883,7 @@
             <p class="msg" data-when="prep">次回の募集は、<br class="sp">ただいま準備中です。</p>
             <p class="msg" data-when="soon">まもなく募集を開始します。</p>
             <a class="btn btn-line btn-block" data-line-link href="#" hidden>公式LINEで募集案内を受け取る</a>
-            <p class="small">次回の募集案内は、公式LINE等でお知らせいたします。</p>
+            <p class="small">次回の募集案内は、<br class="sp">公式LINE等でお知らせいたします。</p>
           </div>
           <!-- 募集中 -->
           <div data-when="open">
