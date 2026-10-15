@@ -220,18 +220,20 @@
     }
 
     /* ========== 講師 ========== */
-    .teacher-head { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; margin-bottom: 34px; }
-    .teacher-photo { position: relative; width: 148px; height: 148px; flex-shrink: 0; }
-    .teacher-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 6px rgba(0, 128, 128, .14), var(--shadow); }
+    .teacher-head { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; margin-bottom: 34px; }
+    .teacher-photo { position: relative; width: 220px; height: 220px; flex-shrink: 0; }
+    .teacher-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; border-radius: 50%; box-shadow: 0 0 0 8px rgba(0, 128, 128, .14), var(--shadow); }
     .teacher-photo .tag {
-      position: absolute; right: 0; bottom: 4px; background: var(--teal); color: #fff;
-      font-size: 11px; font-weight: 700; padding: 1px 10px; border-radius: 999px; letter-spacing: .1em;
+      position: absolute; right: 10px; bottom: 10px; background: var(--teal); color: #fff;
+      font-size: 13px; font-weight: 700; padding: 2px 14px; border-radius: 999px; letter-spacing: .1em;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
     }
     .teacher-head .label { margin-bottom: 6px; }
     .teacher-head .h2 { margin-bottom: 4px; }
     .teacher-head .by { font-size: 14px; color: var(--ink-soft); }
     @media (min-width: 640px) {
-      .teacher-head { flex-direction: row; text-align: left; gap: 28px; }
+      .teacher-head { flex-direction: row; text-align: left; gap: 36px; }
+      .teacher-photo { width: 240px; height: 240px; }
       .teacher-head .label { justify-content: flex-start; }
       .teacher-head .label::after { display: none; }
       .teacher-head .h2 { text-align: left; }
@@ -540,8 +542,10 @@
   <section class="section bg-white" id="message">
     <div class="container">
       <div class="teacher-head">
+        <!-- ▼ ひら先生の写真：v2/images/hirasensei_profile.jpg を同じ名前の写真で上書きすると差し替わります
+             （正方形・600×600px 以上・顔が中央やや上にある写真がおすすめです） -->
         <div class="teacher-photo">
-          <img src="../hirasensei.jpg" alt="伴走者 ひら先生" width="148" height="148">
+          <img src="images/hirasensei_profile.jpg" alt="伴走者 ひら先生" width="240" height="240">
           <span class="tag">講師</span>
         </div>
         <div>
