@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- v2 は確認用のため、検索エンジンに表示させない -->
+  <meta name="robots" content="noindex">
+  <title>不登校を、笑いながら越えていく。〜子どもを支える3ヶ月〜｜ひら先生</title>
+  <meta name="description" content="不登校のお子さんを支える保護者の方へ。子どもを変えるためではなく、あなた自身が自分の人生の主役に戻るための3ヶ月講座「母-Mother」。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="不登校を、笑いながら越えていく。〜子どもを支える3ヶ月〜｜ひら先生">
+  <meta property="og:description" content="子どもを変えるための3ヶ月ではありません。あなた自身が、自分の人生の主役に戻るための3ヶ月講座「母-Mother」。">
+  <meta property="og:image" content="https://mother1th.pages.dev/v2/images/hirasensei_talk.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#006B6B">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    /* =====================================================================
+       ▼ 募集・動画の設定（ここだけ書き換えれば、ページ全体に反映されます）
+       ・日付は日本時間で「"2027-03-01T00:00:00+09:00"」の形式で書きます
+       ・空欄（""）のままの項目は「準備中」と表示されます
+       ===================================================================== */
+    window.LP_CONFIG = {
+      recruitStart: "",   // 募集開始日時   例: "2027-03-01T00:00:00+09:00"
+      recruitEnd:   "",   // 募集締切日時   例: "2027-03-10T23:59:59+09:00"
+      recruitText:  "",   // 募集期間の表示 例: "2027年3月1日(月) 〜 3月10日(水) 23:59"
+      courseTerm:   "",   // 開催期間の表示 例: "2027年4月 〜 6月（3ヶ月）"
+      priceRegular: "",   // 通常価格       例: "99,000円"
+      priceSpecial: "",   // 特別価格       例: "66,000円"
+      applyUrl:     "",   // 申込みページのURL（mosh など）
+      lineUrl:      "",   // 公式LINEの友だち追加URL
+      youtubeId:    ""    // ひら先生の動画ID 例: https://youtu.be/AbCdEf12345 なら "AbCdEf12345"
+    };
+  </script>
+
+  <style>
+    :root {
+      --teal: #008080;
+      --teal-deep: #006B6B;
+      --teal-darker: #005757;
+      --mint: #E8F4F2;
+      --cream: #FAF8F3;
+      --white: #FFFFFF;
+      --ink: #3B3A36;
+      --ink-soft: #6B6862;
+      --line: #E4DED2;
+      --accent: #E87A5D;
+      --mincho: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+      --sans: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      --radius: 16px;
+      --shadow: 0 10px 30px -12px rgba(0, 80, 80, .22);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.95;
+      letter-spacing: .02em;
+      overflow-wrap: anywhere;
+      line-break: strict;
+    }
+    [hidden] { display: none !important; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+    p { margin: 0 0 1.1em; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--teal-deep); font-weight: 700; }
+    .marker { background: linear-gradient(transparent 62%, rgba(0, 128, 128, .16) 62%); font-weight: 700; color: var(--teal-deep); }
+    .pc { display: none; }
+    @media (min-width: 640px) { .pc { display: inline; } .sp { display: none; } }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+    .container-wide { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 72px 0; }
+    @media (min-width: 768px) { .section { padding: 104px 0; } }
+    .bg-white { background: var(--white); }
+    .bg-cream { background: var(--cream); }
+    .bg-mint { background: var(--mint); }
+
+    /* 見出し */
+    .label {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      color: var(--teal); font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .label::before, .label::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .5; }
+    .h2 {
+      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep);
+      font-size: clamp(21px, 5.6vw, 32px); line-height: 1.6; letter-spacing: .04em;
+      text-align: center; margin: 0 0 40px;
+    }
+    .h3 {
+      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep);
+      font-size: clamp(19px, 4.8vw, 25px); line-height: 1.6; text-align: center; margin: 0 0 28px;
+    }
+    .lead-center { text-align: center; }
+
+    /* ボタン */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 56px; padding: 14px 34px; border-radius: 999px; border: 0;
+      background: var(--teal); color: #fff; text-decoration: none;
+      font-family: var(--sans); font-weight: 700; font-size: 17px; letter-spacing: .06em;
+      box-shadow: 0 8px 20px -8px rgba(0, 107, 107, .6);
+      transition: background .2s, transform .2s;
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--teal-deep); transform: translateY(-1px); }
+    .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .btn .arrow { width: 18px; height: 18px; }
+    .btn-line { background: #06C755; box-shadow: 0 8px 20px -8px rgba(6, 199, 85, .6); }
+    .btn-line:hover { background: #05a849; }
+    .btn-block { width: 100%; max-width: 420px; }
+    .btn[aria-disabled="true"] { background: #B9B5AC; box-shadow: none; cursor: default; transform: none; }
+
+    /* 準備中バッジ・枠 */
+    .badge-prep {
+      display: inline-block; padding: 2px 12px; border-radius: 999px;
+      background: #FFF2DE; color: #A35A12; border: 1px solid #F1C88E;
+      font-size: 12px; font-weight: 700; letter-spacing: .08em; line-height: 1.8;
+    }
+    .badge-tmp {
+      display: inline-block; margin-left: 8px; padding: 0 8px; border-radius: 6px; vertical-align: 2px;
+      background: #FFF2DE; color: #A35A12; border: 1px solid #F1C88E; font-size: 11px; font-weight: 700; line-height: 1.7;
+    }
+
+    /* ========== 上部 募集ステータスバー ========== */
+    .statusbar {
+      position: sticky; top: 0; z-index: 40;
+      background: var(--teal-deep); color: #fff;
+      font-size: 13px; line-height: 1.5; text-align: center;
+      padding: 9px 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .12);
+    }
+    .statusbar .pill {
+      display: inline-block; margin-right: 8px; padding: 1px 10px; border-radius: 999px;
+      background: #fff; color: var(--teal-deep); font-size: 11px; font-weight: 700; letter-spacing: .08em;
+    }
+    .statusbar .countdown { display: inline-flex; gap: 4px; align-items: baseline; margin-left: 6px; font-weight: 700; }
+    .statusbar .countdown b { font-variant-numeric: tabular-nums; font-size: 15px; }
+
+    /* ========== ファーストビュー ========== */
+    .hero {
+      position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--cream) 0%, #fff 55%, var(--cream) 100%);
+      padding: 56px 0 72px; text-align: center;
+    }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none;
+    }
+    .hero::before { width: 360px; height: 360px; top: -120px; right: -120px; background: rgba(0, 128, 128, .12); }
+    .hero::after { width: 300px; height: 300px; bottom: -120px; left: -120px; background: rgba(232, 122, 93, .10); }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-block; padding: 6px 18px; border-radius: 999px;
+      background: var(--mint); color: var(--teal-deep); font-size: 13px; font-weight: 700; letter-spacing: .06em;
+      margin-bottom: 26px;
+    }
+    .hero h1 {
+      font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
+      font-size: clamp(30px, 8.6vw, 54px); line-height: 1.5; letter-spacing: .06em;
+      margin: 0 0 28px;
+    }
+    .hero h1 .accent { color: var(--teal); }
+    .hero-lead { font-size: clamp(15px, 4vw, 18px); line-height: 2.05; margin-bottom: 30px; }
+    .hero-course {
+      display: inline-block; text-align: center;
+      background: #fff; border: 1px solid rgba(0, 128, 128, .25); border-radius: var(--radius);
+      padding: 18px 22px; margin-bottom: 34px; box-shadow: var(--shadow);
+    }
+    .hero-course .name { font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 20px; letter-spacing: .1em; }
+    .hero-course .desc { font-size: 14px; color: var(--ink-soft); line-height: 1.9; margin-top: 6px; }
+    .hero-teacher {
+      display: inline-flex; align-items: center; gap: 12px; margin-top: 30px;
+      font-size: 13px; color: var(--ink-soft); text-align: left; line-height: 1.6;
+    }
+    .hero-teacher img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0, 0, 0, .12); }
+    .hero-teacher b { display: block; color: var(--teal-deep); font-family: var(--mincho); font-size: 16px; }
+
+    /* ========== 共感 ========== */
+    .quote-list { margin: 30px 0; display: grid; gap: 12px; }
+    .quote {
+      position: relative; background: var(--cream); border-radius: 14px; padding: 14px 20px 14px 22px;
+      font-family: var(--mincho); font-weight: 600; color: var(--teal-deep); font-size: 17px; line-height: 1.8;
+      border-left: 4px solid rgba(0, 128, 128, .45);
+    }
+    .callout {
+      margin-top: 36px; text-align: center; padding: 28px 20px; border-radius: var(--radius);
+      background: var(--mint);
+      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: clamp(18px, 4.8vw, 22px); line-height: 1.8;
+    }
+    .callout small { display: block; font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--ink); margin-top: 6px; }
+
+    /* ========== 気づき ========== */
+    .insight-box {
+      background: #fff; border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 30px 22px; margin: 32px 0; text-align: center;
+    }
+    .insight-box .kicker { font-size: 13px; color: var(--teal); font-weight: 700; letter-spacing: .1em; margin-bottom: 8px; }
+    .insight-box .big { font-family: var(--mincho); font-weight: 800; color: var(--teal-deep); font-size: clamp(19px, 5vw, 24px); line-height: 1.7; margin: 0; }
+    .belief-list { list-style: none; padding: 0; margin: 20px 0; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .belief-list li {
+      background: #fff; border: 1px dashed rgba(0, 107, 107, .4); border-radius: 999px;
+      padding: 6px 16px; font-size: 14px; color: var(--teal-deep); font-weight: 500;
+    }
+    .note-card {
+      border-top: 1px solid var(--line); margin-top: 36px; padding-top: 30px; text-align: center;
+    }
+    .note-card .final {
+      font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
+      font-size: clamp(22px, 6vw, 30px); line-height: 1.6; margin-top: 10px;
+    }
+
+    /* ========== 講師 ========== */
+    .teacher-head { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; margin-bottom: 34px; }
+    .teacher-photo { position: relative; width: 148px; height: 148px; flex-shrink: 0; }
+    .teacher-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 6px rgba(0, 128, 128, .14), var(--shadow); }
+    .teacher-photo .tag {
+      position: absolute; right: 0; bottom: 4px; background: var(--teal); color: #fff;
+      font-size: 11px; font-weight: 700; padding: 1px 10px; border-radius: 999px; letter-spacing: .1em;
+    }
+    .teacher-head .label { margin-bottom: 6px; }
+    .teacher-head .h2 { margin-bottom: 4px; }
+    .teacher-head .by { font-size: 14px; color: var(--ink-soft); }
+    @media (min-width: 640px) {
+      .teacher-head { flex-direction: row; text-align: left; gap: 28px; }
+      .teacher-head .label { justify-content: flex-start; }
+      .teacher-head .label::after { display: none; }
+      .teacher-head .h2 { text-align: left; }
+    }
+    .message-highlight {
+      margin: 30px 0; padding: 26px 22px; border-radius: var(--radius); background: var(--mint);
+      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: clamp(17px, 4.6vw, 21px); line-height: 1.9; text-align: center;
+    }
+
+    /* 動画枠 */
+    .video-block { margin-top: 56px; }
+    .video-title { text-align: center; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 19px; margin: 0 0 6px; }
+    .video-sub { text-align: center; font-size: 14px; color: var(--ink-soft); margin-bottom: 18px; }
+    .video-frame {
+      position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden;
+      background: #0f3d3d; box-shadow: var(--shadow);
+    }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .10), transparent 50%),
+        linear-gradient(135deg, #0d5e5e, #0a4646);
+      color: #fff; text-align: center; padding: 20px;
+    }
+    .video-placeholder .play {
+      width: 64px; height: 64px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, .7);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .video-placeholder .play svg { width: 24px; height: 24px; margin-left: 4px; opacity: .85; }
+    .video-placeholder p { margin: 0; font-size: 14px; opacity: .9; line-height: 1.7; }
+
+    /* ========== 講座内容 ========== */
+    .center-question {
+      text-align: center; margin: 28px 0; font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
+      font-size: clamp(20px, 5.4vw, 26px); line-height: 1.7;
+    }
+    .overview { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 40px 0 64px; }
+    @media (min-width: 640px) { .overview { grid-template-columns: repeat(4, 1fr); } }
+    .overview div {
+      background: #fff; border-radius: 14px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 14px -8px rgba(0, 80, 80, .3);
+    }
+    .overview dt { font-size: 12px; color: var(--teal); font-weight: 700; letter-spacing: .1em; }
+    .overview dd { margin: 4px 0 0; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 17px; line-height: 1.5; }
+    .overview dd small { display: block; font-family: var(--sans); font-weight: 400; font-size: 12px; color: var(--ink-soft); }
+
+    .steps { list-style: none; margin: 0; padding: 0; position: relative; }
+    .steps::before {
+      content: ""; position: absolute; left: 27px; top: 20px; bottom: 20px; width: 2px;
+      background: linear-gradient(var(--teal), rgba(0, 128, 128, .2));
+    }
+    .step { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 16px; margin-bottom: 18px; }
+    .step-num {
+      position: relative; z-index: 1; width: 56px; height: 56px; border-radius: 50%;
+      background: var(--teal); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-weight: 700; line-height: 1.1; box-shadow: 0 0 0 5px var(--mint);
+    }
+    .step-num small { font-size: 9px; letter-spacing: .1em; }
+    .step-num span { font-size: 19px; }
+    .step.extra .step-num { background: #fff; color: var(--teal-deep); border: 2px dashed var(--teal); font-size: 13px; }
+    .step-card { background: #fff; border-radius: 14px; padding: 16px 18px; box-shadow: 0 4px 14px -8px rgba(0, 80, 80, .3); }
+    .step-card .meta { font-size: 12px; color: var(--teal); font-weight: 700; letter-spacing: .12em; }
+    .step-card h4 { margin: 2px 0 6px; font-family: var(--mincho); font-size: 18px; color: var(--teal-deep); line-height: 1.5; }
+    .step-card h4 small { font-family: var(--sans); font-size: 13px; color: var(--ink-soft); font-weight: 500; margin-left: 4px; }
+    .step-card p { font-size: 15px; line-height: 1.85; }
+
+    .bonus {
+      margin-top: 36px; position: relative; border-radius: var(--radius); padding: 28px 22px 24px; text-align: center;
+      background: #fff; border: 2px solid var(--accent);
+    }
+    .bonus .ribbon {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+      background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .14em; padding: 3px 16px; border-radius: 999px;
+    }
+    .bonus h4 { margin: 0 0 8px; font-family: var(--mincho); font-size: 20px; color: var(--teal-deep); }
+    .bonus p { font-size: 15px; }
+
+    .cta-wrap { text-align: center; margin-top: 44px; }
+    .cta-wrap .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 10px; }
+
+    /* ========== 未来 ========== */
+    .story { position: relative; background: #fff; border-radius: var(--radius); padding: 28px 22px; box-shadow: var(--shadow); margin: 26px 0; }
+    .story .speech {
+      display: block; margin: 12px 0; padding: 12px 18px; border-radius: 18px 18px 18px 4px;
+      background: var(--mint); color: var(--teal-deep); font-weight: 700; font-family: var(--mincho); font-size: 17px;
+    }
+    .daily { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .daily span { background: var(--cream); border-radius: 999px; padding: 4px 14px; font-size: 14px; }
+    .future-final {
+      text-align: center; margin-top: 36px; font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
+      font-size: clamp(20px, 5.4vw, 26px); line-height: 1.7;
+    }
+
+    /* ========== 受講者の声 ========== */
+    .voices { display: grid; gap: 18px; margin-top: 8px; }
+    @media (min-width: 768px) { .voices { grid-template-columns: repeat(3, 1fr); } }
+    .voice {
+      position: relative; background: #fff; border-radius: var(--radius); padding: 24px 20px 20px;
+      border: 2px dashed #E3D8C3;
+    }
+    .voice .badge-prep { position: absolute; top: -12px; right: 16px; }
+    .voice-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .voice-avatar {
+      width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+      background: var(--mint); display: flex; align-items: center; justify-content: center; color: var(--teal);
+    }
+    .voice-avatar svg { width: 24px; height: 24px; }
+    .voice-meta { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+    .voice-meta b { display: block; color: var(--teal-deep); font-size: 15px; }
+    .voice h4 { margin: 0 0 8px; font-family: var(--mincho); color: var(--teal-deep); font-size: 17px; line-height: 1.6; }
+    .voice p { font-size: 14px; color: #8A867E; line-height: 1.85; }
+    .voices-note { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 22px; }
+
+    /* ========== おすすめ ========== */
+    .checklist { list-style: none; margin: 0 auto; padding: 0; max-width: 620px; display: grid; gap: 12px; }
+    .checklist li {
+      position: relative; background: #fff; border-radius: 12px; padding: 14px 18px 14px 52px; line-height: 1.75; font-weight: 500;
+      box-shadow: 0 4px 14px -10px rgba(0, 80, 80, .35);
+    }
+    .checklist li::before {
+      content: ""; position: absolute; left: 18px; top: 50%; width: 22px; height: 22px; margin-top: -11px; border-radius: 6px;
+      background: var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 16px no-repeat;
+    }
+    .checklist-after { text-align: center; margin-top: 28px; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.8; }
+
+    /* ========== 締めのメッセージ ========== */
+    .closing-photo { margin: 0 0 40px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .closing-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 40% 30%; }
+    .voice-quotes { display: grid; gap: 12px; margin: 28px 0; }
+    .voice-quotes p {
+      margin: 0; text-align: center; font-family: var(--mincho); font-weight: 600; color: var(--teal-deep); font-size: 17px; line-height: 1.8;
+      background: var(--cream); border-radius: 14px; padding: 14px 16px;
+    }
+    .closing-final { text-align: center; margin-top: 40px; }
+    .closing-final .catch { font-family: var(--mincho); font-weight: 800; color: var(--teal-deep); font-size: clamp(22px, 6vw, 30px); line-height: 1.6; margin-bottom: 14px; }
+
+    /* ========== FAQ ========== */
+    .faq { display: grid; gap: 12px; }
+    .faq details { background: #fff; border-radius: 14px; box-shadow: 0 4px 14px -10px rgba(0, 80, 80, .35); }
+    .faq summary {
+      list-style: none; cursor: pointer; position: relative;
+      padding: 18px 48px 18px 54px; font-weight: 700; color: var(--teal-deep); line-height: 1.7;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::before {
+      content: "Q"; position: absolute; left: 18px; top: 16px; width: 26px; height: 26px; border-radius: 50%;
+      background: var(--teal); color: #fff; font-size: 14px; display: flex; align-items: center; justify-content: center; line-height: 1;
+    }
+    .faq summary::after {
+      content: ""; position: absolute; right: 20px; top: 50%; width: 10px; height: 10px; margin-top: -7px;
+      border-right: 2px solid var(--teal); border-bottom: 2px solid var(--teal); transform: rotate(45deg); transition: transform .2s;
+    }
+    .faq details[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+    .faq summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 14px; }
+    .faq .answer { padding: 0 20px 20px 54px; font-size: 15px; line-height: 1.9; }
+    .faq .answer b { color: var(--teal-deep); }
+
+    /* ========== 募集要項 ========== */
+    .entry-card { background: #fff; border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
+    .entry-head { background: var(--teal-deep); color: #fff; text-align: center; padding: 26px 18px; }
+    .entry-head .course { font-family: var(--mincho); font-weight: 800; font-size: 24px; letter-spacing: .12em; }
+    .entry-head .sub { font-size: 14px; opacity: .9; line-height: 1.8; margin-top: 4px; }
+    .entry-list { margin: 0; padding: 8px 22px; }
+    .entry-list > div { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .entry-list > div:last-child { border-bottom: 0; }
+    @media (min-width: 640px) { .entry-list > div { grid-template-columns: 150px 1fr; gap: 16px; } }
+    .entry-list dt { font-size: 13px; font-weight: 700; color: var(--teal); letter-spacing: .08em; }
+    .entry-list dd { margin: 0; font-weight: 500; line-height: 1.8; }
+    .price-regular { color: var(--ink-soft); text-decoration: line-through; font-size: 14px; margin-right: 8px; }
+    .price-special { color: var(--accent); font-weight: 800; font-size: 24px; font-family: var(--mincho); }
+    .entry-foot { padding: 24px 22px 30px; text-align: center; background: var(--cream); }
+    .entry-foot .msg { font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .entry-foot .small { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+    .entry-thanks { text-align: center; margin-top: 36px; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.8; }
+
+    /* 状態によって表示を切り替える（JSで body[data-state] を設定） */
+    [data-when] { display: none; }
+    body[data-state="prep"]   [data-when~="prep"],
+    body[data-state="soon"]   [data-when~="soon"],
+    body[data-state="open"]   [data-when~="open"],
+    body[data-state="closed"] [data-when~="closed"] { display: revert; }
+    body:not([data-state])    [data-when~="prep"] { display: revert; }
+
+    /* ========== フッター ========== */
+    .footer { background: var(--teal-deep); color: rgba(255, 255, 255, .88); text-align: center; padding: 40px 20px; font-size: 13px; line-height: 1.9; }
+    body[data-state="open"] .footer { padding-bottom: 110px; }
+    .footer .course { font-family: var(--mincho); font-weight: 700; font-size: 18px; color: #fff; letter-spacing: .1em; }
+    .footer small { display: block; margin-top: 16px; opacity: .7; }
+    @media (min-width: 768px) { body[data-state="open"] .footer { padding-bottom: 40px; } }
+
+    /* ========== スマホ用 追従ボタン（募集中のみ） ========== */
+    .floating-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, .95); box-shadow: 0 -4px 16px rgba(0, 0, 0, .08);
+      transform: translateY(110%); transition: transform .3s;
+    }
+    .floating-cta.show { transform: translateY(0); }
+    .floating-cta .btn { width: 100%; min-height: 50px; font-size: 16px; }
+    @media (min-width: 768px) { .floating-cta { display: none !important; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .floating-cta, .faq summary::after { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 上部 募集ステータスバー ===== -->
+  <div class="statusbar" role="status">
+    <span data-when="prep"><span class="pill">次回募集</span>現在、次回の募集を準備中です</span>
+    <span data-when="soon"><span class="pill">まもなく募集開始</span>募集開始まで<span class="countdown" data-countdown></span></span>
+    <span data-when="open"><span class="pill">募集中</span>締切まで<span class="countdown" data-countdown></span></span>
+    <span data-when="closed"><span class="pill">受付終了</span>今回の募集は終了いたしました</span>
+  </div>
+
+  <!-- ===== ファーストビュー ===== -->
+  <header class="hero">
+    <div class="container">
+      <span class="hero-eyebrow">不登校のお子さんを支える保護者の方へ</span>
+      <h1>不登校を、<br><span class="accent">笑いながら</span><br class="sp">越えていく。</h1>
+      <p class="hero-lead">
+        もう、ひとりで抱え込まなくて大丈夫。<br>
+        あなた自身の笑顔と人生を、<br class="sp">ここからもう一度動かしませんか？
+      </p>
+      <div class="hero-course">
+        <div class="name">3ヶ月講座「母-Mother」</div>
+        <div class="desc">子どもを変えるための3ヶ月ではありません。<br>あなた自身が、自分の人生の主役に<br class="sp">戻るための3ヶ月です。</div>
+      </div>
+      <div>
+        <a href="#apply" class="btn">
+          募集要項を見る
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+      </div>
+      <div class="hero-teacher">
+        <img src="../hirasensei.jpg" alt="" width="52" height="52">
+        <div>講師・伴走者<b>ひら先生</b></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 共感 ===== -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="label">Sympathy</div>
+      <h2 class="h2">学校に行ってほしいと<br class="sp">願うほど、<br class="pc">苦しく<br class="sp">なっていませんか？</h2>
+
+      <p>毎朝、布団から起きてこない子どもの背中を見つめながら──</p>
+      <div class="quote-list">
+        <div class="quote">「今日、どうするの？」</div>
+        <div class="quote">「学校は？」</div>
+        <div class="quote">「このままで、本当に大丈夫なのかな……」</div>
+      </div>
+      <p>そんな不安で頭がいっぱいになり、胸が押しつぶされそうになっていませんか。</p>
+      <p>学校のこと、勉強の遅れ、友達関係、そして子どもの将来。<br>朝から晩まで、気づけば子どものことばかりを考えている。</p>
+      <p>夜遅くまでスマホを握りしめ、ネットの情報を検索し、本を何冊も読みあさり、いろんな人の話を必死に聞いて……。</p>
+      <div class="quote-list">
+        <div class="quote">「どうしたら、この子は変わってくれるんだろう？」</div>
+        <div class="quote">「私の育て方がいけなかったのかな……」</div>
+      </div>
+      <p>そんなふうに、出口の見えない暗闇の中で、たったひとりで答えを探し続けてきたのではないでしょうか。</p>
+
+      <div class="callout">
+        もう大丈夫。
+        <small>まずはどうか、<br class="sp">自分を認めてあげてください。</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 気づき ===== -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="label">Insight</div>
+      <h2 class="h2">なぜ、どれだけがんばっても<br>苦しさが消えなかったのか</h2>
+
+      <p>どれだけ本を読んでも、どれだけ子どものために尽くしても、なぜか心が晴れない。</p>
+      <p>それは、<span class="marker">あなたの愛情が足りないからでも、がんばりが足りないからでもありません。</span></p>
+
+      <div class="insight-box">
+        <div class="kicker">たったひとつだけあった、大切なすれ違い</div>
+        <p class="big">「子どもを変えよう」と<br class="sp">必死になりすぎていたこと。</p>
+      </div>
+
+      <ul class="belief-list">
+        <li>「学校には行くもの」</li>
+        <li>「行かないと将来困る」</li>
+        <li>「親なんだから、私が何とかしなきゃ」</li>
+      </ul>
+      <p>そんな思い込みやプレッシャーに縛られ、あなた自身が息苦しくなっていませんでしたか？</p>
+      <p>子どものケアを最優先にして、自分の気持ちや、自分の時間、自分の人生をずっと後回しにしてきませんでしたか？</p>
+      <p class="lead-center"><strong>もしかしたら、最初に変えるべきなのは、<br>子どもではないのかもしれません。</strong></p>
+
+      <div class="note-card">
+        <p>誤解しないでくださいね。<br>
+          「親がもっとがんばらなきゃいけない」と責めているわけではありません。<br>
+          「親が変われば、子どもも変わる」という安易な話がしたいわけでもありません。</p>
+        <p>僕が心から伝えたいのは、</p>
+        <div class="final">まず、あなた自身が<br>元気になることです。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 講師メッセージ ＋ 動画 ===== -->
+  <section class="section bg-white" id="message">
+    <div class="container">
+      <div class="teacher-head">
+        <div class="teacher-photo">
+          <img src="../hirasensei.jpg" alt="伴走者 ひら先生" width="148" height="148">
+          <span class="tag">講師</span>
+        </div>
+        <div>
+          <div class="label">Teacher's Message</div>
+          <h2 class="h2">不登校は、人生を<br class="sp">あきらめる理由にはならない</h2>
+          <div class="by">伴走者：ひら先生より</div>
+        </div>
+      </div>
+
+      <p>はじめまして、ひら先生です。</p>
+      <p>不登校になった。学校に行けなくなった。<br>そのとき、まるで目の前が真っ暗になって「人生が終わってしまった」かのように感じる親御さんは少なくありません。</p>
+
+      <div class="message-highlight">
+        僕は知っています。<br>
+        不登校なんかで<br class="sp">人生は終わりません。<br>
+        いやむしろ、ここから新しい人生が<br class="sp">始まるのだと、僕は思うのです。
+      </div>
+
+      <p>学校に行くことは人生のゴールではありません。<br>子どもが幸せになるための、道のりの１つです。</p>
+      <p>子どもの不登校をきっかけに、親が立ち止まり、これまでの人生や本当に大切にしたいことを見つめ直す。</p>
+      <p>そして、その背中を見た子どもたちが、自ら荷物を背負い、自分の足で壁を越えていく。</p>
+      <p><strong>そんな未来を、僕はあなたと一緒につくりたいのです。</strong></p>
+
+      <!-- ▼ ひら先生の動画（YouTube）
+           動画ができたら、ページ上部の LP_CONFIG の youtubeId に動画IDを入れてください。
+           IDが入ると「準備中」の表示が自動で動画に置き換わります。 -->
+      <div class="video-block">
+        <h3 class="video-title">ひら先生からのメッセージ動画</h3>
+        <p class="video-sub">講座に込めた想いを、ひら先生ご本人の声でお届けします。</p>
+        <div class="video-frame" id="video-frame">
+          <div class="video-placeholder">
+            <span class="badge-prep">準備中</span>
+            <div class="play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="#fff"><path d="M7 4.5v15l12.5-7.5z"/></svg>
+            </div>
+            <p>動画は現在準備中です。<br>公開まで、もう少しお待ちください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 講座の考え方・内容 ===== -->
+  <section class="section bg-mint">
+    <div class="container">
+      <div class="label">Methodology</div>
+      <h2 class="h2">子どもをどうにかする前に、<br>「私はどう生きたいか」を<br class="sp">決める3ヶ月</h2>
+
+      <p>だからこそ、この講座では<span class="marker">「子どもをどう変えるか」は一切考えません。</span>向き合うのは、あなた自身です。</p>
+      <p>3ヶ月かけてじっくりと見つめるのは、</p>
+      <p class="center-question">「私は、これから<br class="sp">どう生きたいのか？」</p>
+      <p>という問いです。</p>
+      <p>自分の気持ちを知り、自分を縛っていた思い込みに気づき、本当に大切にしたい価値観を思い出す。親として、そして一人の人間としての「自分の軸」を取り戻していきます。</p>
+      <p>親が元気になり、心にふっと余白が生まれると、目の前の景色がガラリと変わります。</p>
+      <p>子どもの一挙手一投足に振り回されていた自分が、一段高いところから、あたたかいまなざしで子どもを見守れるようになる。必要なときにはそっと手を差し伸べ、必要でないときには信じて見守る。</p>
+      <p>子どもの荒れた言葉や涙も、感情でぶつかり合うのではなく、大きな器で受け止められるようになるのです。</p>
+
+      <!-- 講座の概要 -->
+      <dl class="overview">
+        <div><dt>期間</dt><dd>3ヶ月</dd></div>
+        <div><dt>頻度</dt><dd>月2回<small>各90分</small></dd></div>
+        <div><dt>内容</dt><dd>全5STEP<small>＋番外編</small></dd></div>
+        <div><dt>見逃し</dt><dd>録画あり<small>いつでも視聴OK</small></dd></div>
+      </dl>
+
+      <h3 class="h3">3ヶ月の旅<br><small style="font-size:.7em">（全5STEP＋番外編）</small></h3>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num"><small>STEP</small><span>01</span></div>
+          <div class="step-card">
+            <div class="meta">過去｜LOVE LETTER</div>
+            <h4>過去の自分と向き合う</h4>
+            <p>これまでの自分と向き合い、「私なら大丈夫」「この子なら大丈夫」という愛・自信・誇りの土台を取り戻します。</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num"><small>STEP</small><span>02</span></div>
+          <div class="step-card">
+            <div class="meta">現在｜CHANGE</div>
+            <h4>思い込みの見つめ直し</h4>
+            <p>「学校には行くべき」といった当たり前や思い込みを解きほぐし、自由な選択肢を広げていきます。</p>
+          </div>
+        </li>
+        <li class="step extra">
+          <div class="step-num">番外</div>
+          <div class="step-card">
+            <div class="meta">特別編｜EXTRA STEP</div>
+            <h4>学校教育の歴史</h4>
+            <p>わたしたちを育んできた学校教育のこれまでとこれからを考え、あたりまえを疑います。</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num"><small>STEP</small><span>03</span></div>
+          <div class="step-card">
+            <div class="meta">関係性｜HEART</div>
+            <h4>愛と感謝を取り戻す</h4>
+            <p>子どもを変えようとするのを手放し、愛と感謝を軸に親子のつながりをあたたかく再構築します。</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num"><small>STEP</small><span>04</span></div>
+          <div class="step-card">
+            <div class="meta">自己確立｜MY AXIS</div>
+            <h4>自分の軸をつくる</h4>
+            <p>「どんな親でありたいか」「どんな人間として生きたいか」、誰の正解でもない自分だけの答えを見つけます。</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num"><small>STEP</small><span>05</span></div>
+          <div class="step-card">
+            <div class="meta">未来｜ALIVE</div>
+            <h4>これからの人生を生きる</h4>
+            <p>子どもの人生に同化するのをやめ、あなた自身の人生をもう一度動かしていきます。</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="bonus">
+        <span class="ribbon">SPECIAL BONUS</span>
+        <h4>【特別特典】<br class="sp">個別セッション（1回）プレゼント</h4>
+        <p>講座の学びをあなたの状況に合わせ、全体では話しきれない悩みや想いも含めてじっくり個別にお話しできる特別な時間です。</p>
+      </div>
+
+      <div class="cta-wrap">
+        <a href="#apply" class="btn">募集要項を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3ヶ月後の未来 ===== -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="label">Future</div>
+      <h2 class="h2">想像してみてください、<br>3ヶ月後のあなたの笑顔を</h2>
+
+      <p>朝、子どもが起きてこない。<br>以前のあなたなら、不安と焦りで胸が張り裂けそうになっていたはずです。</p>
+      <p>でも、3ヶ月後のあなたはどうでしょう。</p>
+
+      <div class="story">
+        <p>子どもが「今日も休む」と言ったとき、あなたは優しく笑って、</p>
+        <span class="speech">「そっか。今日はどう過ごす？」</span>
+        <p>と、穏やかに声をかけてあげています。</p>
+      </div>
+
+      <p>子どものことだけで頭がいっぱいだった毎日から、少しずつ自分の時間を取り戻している。</p>
+      <div class="daily">
+        <span>好きなカフェに行く</span><span>友達とおしゃべり</span><span>仕事に打ち込む</span><span>新しい学びにワクワク</span>
+      </div>
+      <p>「私は今日、何がしたいかな？」と、自分に問いかけられる日々。</p>
+      <p>ある日、リビングで子どもと何気ないテレビをみて、ゲラゲラ笑っている。<br>そのふとした瞬間に、ハッと気づくのです。</p>
+      <p class="lead-center"><strong>「あれ？私、最近すごく笑ってるな」</strong></p>
+      <p>子どもが学校に行ったから笑えているのではありません。<br><span class="marker">あなた自身が元気を取り戻したから、世界の見え方が変わったのです。</span></p>
+      <p>もし子どもがまだ学校に行っていなかったとしても、「私なら大丈夫。この子なら大丈夫」──そう心から信じて、どっしりと構えていられる。</p>
+
+      <div class="story">
+        <p>そんなあなたの背中を見て、ある日子どもがぽつりと言うかもしれません。</p>
+        <span class="speech">「ねえママ、<br class="sp">大人になるのって楽しそうだね」</span>
+        <p>そのとき、胸の奥からじわっとあたたかい涙がこぼれ、「私、自分の人生を楽しめるようになったんだ」と実感するはずです。</p>
+      </div>
+
+      <p class="future-final">あなたとお子さんの<br class="sp">「新しい笑顔」を、<br>ここから一緒に。</p>
+    </div>
+  </section>
+
+  <!-- ===== 受講者の声（準備中） =====
+       ご感想がそろったら、各カードの「準備中」バッジを削除し、
+       名前・お子さんの状況・見出し・本文を書き換えてください。 -->
+  <section class="section bg-white" id="voices">
+    <div class="container-wide">
+      <div class="label">Voices</div>
+      <h2 class="h2">受講者の声</h2>
+
+      <div class="voices">
+        <article class="voice">
+          <span class="badge-prep">準備中</span>
+          <div class="voice-head">
+            <div class="voice-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+            </div>
+            <div class="voice-meta"><b>受講者さま（お名前）</b>お子さんの年齢・状況</div>
+          </div>
+          <h4>ご感想の見出しが入ります</h4>
+          <p>ここに受講者さまのご感想が入ります。現在、ご感想を準備しています。公開まで今しばらくお待ちください。</p>
+        </article>
+        <article class="voice">
+          <span class="badge-prep">準備中</span>
+          <div class="voice-head">
+            <div class="voice-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+            </div>
+            <div class="voice-meta"><b>受講者さま（お名前）</b>お子さんの年齢・状況</div>
+          </div>
+          <h4>ご感想の見出しが入ります</h4>
+          <p>ここに受講者さまのご感想が入ります。現在、ご感想を準備しています。公開まで今しばらくお待ちください。</p>
+        </article>
+        <article class="voice">
+          <span class="badge-prep">準備中</span>
+          <div class="voice-head">
+            <div class="voice-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+            </div>
+            <div class="voice-meta"><b>受講者さま（お名前）</b>お子さんの年齢・状況</div>
+          </div>
+          <h4>ご感想の見出しが入ります</h4>
+          <p>ここに受講者さまのご感想が入ります。現在、ご感想を準備しています。公開まで今しばらくお待ちください。</p>
+        </article>
+      </div>
+      <p class="voices-note">受講者さまのご感想は、現在準備中です。</p>
+    </div>
+  </section>
+
+  <!-- ===== こんな方におすすめ ===== -->
+  <section class="section bg-mint">
+    <div class="container">
+      <div class="label">For You</div>
+      <h2 class="h2">こんな方に<br class="sp">受けていただきたい講座です</h2>
+      <ul class="checklist">
+        <li>子どもが学校に行けなくなり、毎日不安でいっぱいになっている</li>
+        <li>本やネットで情報を集めても、なぜか心が晴れない</li>
+        <li>「私の育て方がいけなかったのかな」と自分を責めてしまう</li>
+        <li>子どものことばかりで、自分の気持ちや時間を後回しにしてきた</li>
+        <li>親として、ひとりの人間として「自分の軸」を取り戻したい</li>
+      </ul>
+      <p class="checklist-after">ひとつでも当てはまったら、<br class="sp">それは立ち止まっていいサインです。</p>
+    </div>
+  </section>
+
+  <!-- ===== 締めのメッセージ（2枚目の写真） ===== -->
+  <section class="section bg-white">
+    <div class="container">
+      <figure class="closing-photo">
+        <img src="images/hirasensei_talk.jpg" alt="笑顔で語りかけるひら先生" width="1024" height="682" loading="lazy">
+      </figure>
+
+      <h2 class="h2">不登校を<br class="sp">「失った時間」ではなく、<br>「人生を見つめ直す時間」へ</h2>
+      <p>今はまだ、先が見えなくて不安かもしれません。<br>でも、あきらめないでください。</p>
+      <div class="voice-quotes">
+        <p>「不登校と向き合ったからこそ、今の私がある」</p>
+        <p>「あの時間があったからこそ、子どもと本当の信頼でつながれた」</p>
+        <p>「あのつらい経験があったからこそ、自分の人生を取り戻せた」</p>
+      </div>
+      <p class="lead-center"><strong>心からそう言える日は、必ずやってきます。</strong></p>
+      <p>子どものために自分を置き去りにしてきた優しいあなたへ。</p>
+      <p>もう、誰かの顔色を伺ったり、世間の「正解」に自分を合わせたりするのは終わりにしませんか？</p>
+      <p>子どもを変えるための3ヶ月ではありません。<br><span class="marker">あなた自身が、自分の人生の主役に戻るための3ヶ月です。</span></p>
+
+      <div class="closing-final">
+        <div class="catch">不登校を、<br class="sp">笑いながら越えていく。</div>
+        <p>その最初の一歩を、子どもではなく、<br class="sp">あなた自身から。</p>
+        <p><strong>僕と一緒に、ここから始めてみませんか？</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== よくある質問 ===== -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="label">Q&amp;A</div>
+      <h2 class="h2">よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>顔出し（カメラオン）は必要ですか？</summary>
+          <div class="answer">
+            <p><b>はい、お顔を出してのご参加をお願いしています。</b></p>
+            <p>お互いに顔が見えることで、参加者同士が安心して本音を共有できるあたたかい場をつくりたいためです。リラックスした普段着でご参加ください。</p>
+          </div>
+        </details>
+        <details>
+          <summary>見逃し配信（アーカイブ録画）はありますか？</summary>
+          <div class="answer">
+            <p><b>はい、アーカイブ（録画）配信をご用意しております。</b></p>
+            <p>当日リアルタイムでのご参加が難しい場合や、後から何度も復習したい場合もご安心ください。受講期間中はいつでもお好きなタイミングで動画をご視聴いただけます。</p>
+          </div>
+        </details>
+        <details>
+          <summary>子どもの年齢や、不登校の期間に関係なく参加できますか？</summary>
+          <div class="answer">
+            <p><b>はい、どなたでもご参加いただけます。</b></p>
+            <p>小学生から高校生まで、また「行き渋り」の初期から「長期の不登校」まで、お子さんの年齢や状況を問わず歓迎いたします。</p>
+          </div>
+        </details>
+        <!-- ▼ 以下は仮の回答です。内容が確定したら「仮」のバッジを削除して書き換えてください -->
+        <details>
+          <summary>次回の募集はいつですか？<span class="badge-tmp">仮</span></summary>
+          <div class="answer">
+            <p>現在、次回の募集に向けて準備中です。日程が決まり次第、公式LINE等でお知らせいたします。</p>
+          </div>
+        </details>
+        <details>
+          <summary>受講料の支払い方法を教えてください。<span class="badge-tmp">仮</span></summary>
+          <div class="answer">
+            <p>お支払い方法は、次回募集の開始時にお申込みページでご案内いたします。</p>
+          </div>
+        </details>
+        <details>
+          <summary>都合が合わず、参加できない回があっても大丈夫ですか？<span class="badge-tmp">仮</span></summary>
+          <div class="answer">
+            <p>はい、大丈夫です。参加できなかった回は、アーカイブ（録画）で後からご視聴いただけます。</p>
+          </div>
+        </details>
+        <details>
+          <summary>お父さんや、ほかの家族でも参加できますか？<span class="badge-tmp">仮</span></summary>
+          <div class="answer">
+            <p>はい、不登校・登校しぶりのお子さんを支えている方であれば、どなたでもご参加いただけます。</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 募集要項・申込み ===== -->
+  <section class="section bg-mint" id="apply">
+    <div class="container">
+      <div class="label">Information &amp; Entry</div>
+      <h2 class="h2">募集要項</h2>
+
+      <div class="entry-card">
+        <div class="entry-head">
+          <div class="course">「母-Mother」</div>
+          <div class="sub">不登校を笑いながら越えていく<br>〜子どもを支える3ヶ月〜</div>
+        </div>
+        <dl class="entry-list">
+          <div><dt>開催期間</dt><dd data-cfg="courseTerm"><span class="badge-prep">準備中</span></dd></div>
+          <div><dt>受講形式・頻度</dt><dd>月2回（各90分）・全5ステップ構成</dd></div>
+          <div><dt>募集期間</dt><dd data-cfg="recruitText"><span class="badge-prep">準備中</span></dd></div>
+          <div><dt>対象</dt><dd>不登校・登校しぶりのお子さんを支える保護者の方</dd></div>
+          <div><dt>特別特典</dt><dd>個別セッション 1回プレゼント</dd></div>
+          <div><dt>受講料金</dt><dd id="price"><span class="badge-prep">準備中</span></dd></div>
+        </dl>
+        <div class="entry-foot">
+          <!-- 準備中（日程未設定）・募集開始前 -->
+          <div data-when="prep soon">
+            <p class="msg" data-when="prep">次回の募集は、<br class="sp">ただいま準備中です。</p>
+            <p class="msg" data-when="soon">まもなく募集を開始します。</p>
+            <a class="btn btn-line btn-block" data-line-link href="#" hidden>公式LINEで募集案内を受け取る</a>
+            <p class="small">次回の募集案内は、公式LINE等でお知らせいたします。</p>
+          </div>
+          <!-- 募集中 -->
+          <div data-when="open">
+            <a class="btn btn-block" data-apply-link href="#" aria-disabled="true">今すぐ申し込む</a>
+            <p class="small">※定員に達し次第、予告なく受付を終了する場合がございます。</p>
+          </div>
+          <!-- 受付終了 -->
+          <div data-when="closed">
+            <p class="msg">今回の募集は終了いたしました。</p>
+            <p class="small">たくさんのご応募・お申込みをいただき、誠にありがとうございました。<br>次回の募集案内は公式LINE等でお知らせいたします。</p>
+            <a class="btn btn-line btn-block" data-line-link href="#" hidden>公式LINEで募集案内を受け取る</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="entry-thanks">あなたの勇気ある一歩を、<br>心よりお待ちしています。</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="course">「母-Mother」</div>
+    <div>不登校を、笑いながら越えていく。<br>〜子どもを支える3ヶ月〜</div>
+    <small>&copy; 2026 ひら先生 All Rights Reserved.</small>
+  </footer>
+
+  <!-- スマホ用 追従申込みボタン（募集中のみ表示） -->
+  <div class="floating-cta" id="floating-cta" data-when="open">
+    <a class="btn" data-apply-link href="#apply">詳細・お申込みはこちら</a>
+  </div>
+
+  <script>
+    (function () {
+      var cfg = window.LP_CONFIG || {};
+
+      // ---- 募集状態の判定（日本時間の日時で比較） ----
+      var start = cfg.recruitStart ? new Date(cfg.recruitStart).getTime() : NaN;
+      var end = cfg.recruitEnd ? new Date(cfg.recruitEnd).getTime() : NaN;
+      var hasDates = !isNaN(start) && !isNaN(end);
+
+      function getState(now) {
+        if (!hasDates) return "prep";
+        if (now < start) return "soon";
+        if (now <= end) return "open";
+        return "closed";
+      }
+
+      // ---- 設定値をページに反映 ----
+      document.querySelectorAll("[data-cfg]").forEach(function (el) {
+        var v = cfg[el.getAttribute("data-cfg")];
+        if (v) el.textContent = v;
+      });
+      if (cfg.priceSpecial) {
+        var price = document.getElementById("price");
+        price.innerHTML = "";
+        if (cfg.priceRegular) {
+          var reg = document.createElement("span");
+          reg.className = "price-regular";
+          reg.textContent = "通常 " + cfg.priceRegular;
+          price.appendChild(reg);
+        }
+        var sp = document.createElement("span");
+        sp.className = "price-special";
+        sp.textContent = cfg.priceSpecial;
+        price.appendChild(sp);
+        price.appendChild(document.createTextNode("（税込）"));
+      }
+      if (cfg.lineUrl) {
+        document.querySelectorAll("[data-line-link]").forEach(function (a) {
+          a.href = cfg.lineUrl;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.hidden = false;
+        });
+      }
+      if (cfg.applyUrl) {
+        document.querySelectorAll("[data-apply-link]").forEach(function (a) {
+          a.href = cfg.applyUrl;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.removeAttribute("aria-disabled");
+        });
+      }
+
+      // ---- YouTube 動画 ----
+      if (cfg.youtubeId) {
+        var frame = document.getElementById("video-frame");
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(cfg.youtubeId) + "?rel=0";
+        iframe.title = "ひら先生からのメッセージ動画";
+        iframe.loading = "lazy";
+        iframe.allow = "accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+        iframe.allowFullscreen = true;
+        frame.innerHTML = "";
+        frame.appendChild(iframe);
+      }
+
+      // ---- スマホ追従ボタン：募集中のみ、FV通過後〜募集要項の手前で表示 ----
+      var floating = document.getElementById("floating-cta");
+      var apply = document.getElementById("apply");
+      function updateFloating() {
+        var show = document.body.getAttribute("data-state") === "open" &&
+          window.scrollY > 300 &&
+          apply.getBoundingClientRect().top > window.innerHeight * 0.8;
+        floating.classList.toggle("show", show);
+      }
+      window.addEventListener("scroll", updateFloating, { passive: true });
+      window.addEventListener("resize", updateFloating, { passive: true });
+
+      // ---- 状態の切り替えとカウントダウン ----
+      var counters = document.querySelectorAll("[data-countdown]");
+      function pad(n) { return String(n).padStart(2, "0"); }
+      function renderCountdown(ms) {
+        var s = Math.max(0, Math.floor(ms / 1000));
+        var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), sec = s % 60;
+        var html = "<b>" + d + "</b>日<b>" + pad(h) + "</b>時間<b>" + pad(m) + "</b>分<b>" + pad(sec) + "</b>秒";
+        counters.forEach(function (el) { el.innerHTML = html; });
+      }
+      function tick() {
+        var now = Date.now();
+        var state = getState(now);
+        if (document.body.getAttribute("data-state") !== state) {
+          document.body.setAttribute("data-state", state);
+          updateFloating();
+        }
+        if (state === "soon") renderCountdown(start - now);
+        if (state === "open") renderCountdown(end - now);
+      }
+      tick();
+      if (hasDates) setInterval(tick, 1000);
+    })();
+  </script>
+</body>
+</html>
