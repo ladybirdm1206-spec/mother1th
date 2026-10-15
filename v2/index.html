@@ -313,8 +313,10 @@
     .bonus h4 { margin: 0 0 8px; font-family: var(--mincho); font-size: 20px; color: var(--teal-deep); }
     .bonus p { font-size: 15px; }
 
+    /* 申込みボタン（文言と行き先は募集状態に合わせてJSで自動切り替え） */
     .cta-wrap { text-align: center; margin-top: 44px; }
-    .cta-wrap .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 10px; }
+    .cta-wrap .btn { min-width: min(100%, 320px); }
+    .cta-wrap .cta-note { font-size: 13px; color: var(--ink-soft); margin: 10px 0 0; }
 
     /* ========== 未来 ========== */
     .story { position: relative; background: #fff; border-radius: var(--radius); padding: 28px 22px; box-shadow: var(--shadow); margin: 26px 0; }
@@ -421,12 +423,12 @@
 
     /* ========== フッター ========== */
     .footer { background: var(--teal-deep); color: rgba(255, 255, 255, .88); text-align: center; padding: 40px 20px; font-size: 13px; line-height: 1.625; }
-    body[data-state="open"] .footer { padding-bottom: 110px; }
+    body.has-floating .footer { padding-bottom: 110px; }
     .footer .course { font-family: var(--mincho); font-weight: 700; font-size: 18px; color: #fff; letter-spacing: .1em; }
     .footer small { display: block; margin-top: 16px; opacity: .7; }
-    @media (min-width: 768px) { body[data-state="open"] .footer { padding-bottom: 40px; } }
+    @media (min-width: 768px) { body.has-floating .footer { padding-bottom: 40px; } }
 
-    /* ========== スマホ用 追従ボタン（募集中のみ） ========== */
+    /* ========== スマホ用 追従ボタン ========== */
     .floating-cta {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
       padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
@@ -466,11 +468,9 @@
         <div class="name">3ヶ月講座「母-Mother」</div>
         <div class="desc">子どもを変えるための3ヶ月ではありません。<br>あなた自身が、自分の人生の主役に<br class="sp">戻るための3ヶ月です。</div>
       </div>
-      <div>
-        <a href="#apply" class="btn">
-          募集要項を見る
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </a>
+      <div class="cta-wrap" style="margin-top:0">
+        <a class="btn" data-cta href="#apply">募集要項を見る</a>
+        <p class="cta-note" data-cta-note hidden></p>
       </div>
       <!-- ▼ ひら先生の写真：v2/images/hirasensei_profile.jpg を同じ名前の写真で上書きすると差し替わります
            （正方形・600×600px 以上・顔が中央やや上にある写真がおすすめです） -->
@@ -672,7 +672,8 @@
       </div>
 
       <div class="cta-wrap">
-        <a href="#apply" class="btn">募集要項を見る</a>
+        <a class="btn" data-cta href="#apply">募集要項を見る</a>
+        <p class="cta-note" data-cta-note hidden></p>
       </div>
     </div>
   </section>
@@ -709,6 +710,10 @@
       </div>
 
       <p class="future-final">あなたとお子さんの<br class="sp">「新しい笑顔」を、<br>ここから一緒に。</p>
+      <div class="cta-wrap">
+        <a class="btn" data-cta href="#apply">募集要項を見る</a>
+        <p class="cta-note" data-cta-note hidden></p>
+      </div>
     </div>
   </section>
 
@@ -756,6 +761,10 @@
         </article>
       </div>
       <p class="voices-note">受講者さまのご感想は、現在準備中です。</p>
+      <div class="cta-wrap">
+        <a class="btn" data-cta href="#apply">募集要項を見る</a>
+        <p class="cta-note" data-cta-note hidden></p>
+      </div>
     </div>
   </section>
 
@@ -798,6 +807,10 @@
         <div class="catch">不登校を、<br class="sp">笑いながら越えていく。</div>
         <p>その最初の一歩を、子どもではなく、<br class="sp">あなた自身から。</p>
         <p><strong>僕と一緒に、ここから始めてみませんか？</strong></p>
+        <div class="cta-wrap">
+          <a class="btn" data-cta href="#apply">募集要項を見る</a>
+          <p class="cta-note" data-cta-note hidden></p>
+        </div>
       </div>
     </div>
   </section>
@@ -855,6 +868,10 @@
           </div>
         </details>
       </div>
+      <div class="cta-wrap">
+        <a class="btn" data-cta href="#apply">募集要項を見る</a>
+        <p class="cta-note" data-cta-note hidden></p>
+      </div>
     </div>
   </section>
 
@@ -887,7 +904,7 @@
           </div>
           <!-- 募集中 -->
           <div data-when="open">
-            <a class="btn btn-block" data-apply-link href="#" aria-disabled="true">今すぐ申し込む</a>
+            <a class="btn btn-block" id="apply-button" href="#" aria-disabled="true">今すぐ申し込む</a>
             <p class="small">※定員に達し次第、予告なく受付を終了する場合がございます。</p>
           </div>
           <!-- 受付終了 -->
@@ -909,9 +926,9 @@
     <small>&copy; 2026 ひら先生 All Rights Reserved.</small>
   </footer>
 
-  <!-- スマホ用 追従申込みボタン（募集中のみ表示） -->
-  <div class="floating-cta" id="floating-cta" data-when="open">
-    <a class="btn" data-apply-link href="#apply">詳細・お申込みはこちら</a>
+  <!-- スマホ用 追従ボタン（募集中、または公式LINEのURLが設定されているときに表示） -->
+  <div class="floating-cta" id="floating-cta">
+    <a class="btn" data-cta href="#apply">募集要項を見る</a>
   </div>
 
   <script>
@@ -958,13 +975,56 @@
           a.hidden = false;
         });
       }
-      if (cfg.applyUrl) {
-        document.querySelectorAll("[data-apply-link]").forEach(function (a) {
-          a.href = cfg.applyUrl;
-          a.target = "_blank";
-          a.rel = "noopener";
-          a.removeAttribute("aria-disabled");
+      // 募集要項の「申し込む」ボタン：applyUrl があればそちら、なければ公式LINEへ
+      var applyBtn = document.getElementById("apply-button");
+      var applyDest = cfg.applyUrl || cfg.lineUrl;
+      if (applyDest) {
+        applyBtn.href = applyDest;
+        applyBtn.target = "_blank";
+        applyBtn.rel = "noopener";
+        applyBtn.removeAttribute("aria-disabled");
+        if (!cfg.applyUrl) {
+          applyBtn.textContent = "公式LINEから申し込む";
+          applyBtn.classList.add("btn-line");
+        }
+      }
+
+      // ---- ページ内の申込みボタン（data-cta）を募集状態に合わせて切り替え ----
+      //  募集中        → 「詳細・お申込みはこちら」で募集要項へ（料金・条件を見てから申し込めるように）
+      //  準備中・開始前・終了 → 公式LINEのURLがあれば「公式LINEで募集案内を受け取る」
+      //                     なければ「募集要項を見る」で募集要項へ
+      var ctaLinks = document.querySelectorAll("[data-cta]");
+      var ctaNotes = document.querySelectorAll("[data-cta-note]");
+      function ctaFor(state) {
+        if (state === "open") {
+          return { label: "詳細・お申込みはこちら", href: "#apply", line: false, floating: true,
+                   note: cfg.recruitText ? "募集期間：" + cfg.recruitText : "ただいま募集中です" };
+        }
+        if (cfg.lineUrl) {
+          return { label: "公式LINEで募集案内を受け取る", href: cfg.lineUrl, line: true, external: true, floating: true,
+                   note: state === "soon" ? "募集開始のお知らせを、公式LINEでお届けします" : "次回の募集開始を、公式LINEでいち早くお知らせします" };
+        }
+        return { label: "募集要項を見る", href: "#apply", line: false, floating: false, note: "" };
+      }
+      function updateCtas(state) {
+        var c = ctaFor(state);
+        ctaLinks.forEach(function (a) {
+          a.textContent = c.label;
+          a.href = c.href;
+          a.classList.toggle("btn-line", c.line);
+          if (c.external) {
+            a.target = "_blank";
+            a.rel = "noopener";
+          } else {
+            a.removeAttribute("target");
+            a.removeAttribute("rel");
+          }
         });
+        ctaNotes.forEach(function (p) {
+          p.textContent = c.note;
+          p.hidden = !c.note;
+        });
+        document.body.classList.toggle("has-floating", c.floating);
       }
 
       // ---- YouTube 動画 ----
@@ -980,11 +1040,11 @@
         frame.appendChild(iframe);
       }
 
-      // ---- スマホ追従ボタン：募集中のみ、FV通過後〜募集要項の手前で表示 ----
+      // ---- スマホ追従ボタン：表示する状態のとき、FV通過後〜募集要項の手前で表示 ----
       var floating = document.getElementById("floating-cta");
       var apply = document.getElementById("apply");
       function updateFloating() {
-        var show = document.body.getAttribute("data-state") === "open" &&
+        var show = document.body.classList.contains("has-floating") &&
           window.scrollY > 300 &&
           apply.getBoundingClientRect().top > window.innerHeight * 0.8;
         floating.classList.toggle("show", show);
@@ -1006,6 +1066,7 @@
         var state = getState(now);
         if (document.body.getAttribute("data-state") !== state) {
           document.body.setAttribute("data-state", state);
+          updateCtas(state);
           updateFloating();
         }
         if (state === "soon") renderCountdown(start - now);
