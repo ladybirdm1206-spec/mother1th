@@ -49,6 +49,7 @@
       --ink-soft: #6B6862;
       --line: #E4DED2;
       --accent: #E87A5D;
+      --gold: #C6A15B;
       --mincho: "Noto Serif JP", "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
       --sans: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
       --radius: 16px;
@@ -73,8 +74,8 @@
     p:last-child { margin-bottom: 0; }
     /* 改行の調整：見出し・強調は行の長さをそろえ、本文は最終行が1〜2文字だけにならないように */
     p, li, dd, summary { text-wrap: pretty; }
-    h1, h2, h3, h4, .callout, .message-highlight, .speech, .future-final, .catch, .final, .big,
-    .quote, .voice-quotes p, .em-line, .checklist-after, .entry-foot .msg, .entry-thanks, .center-question, .entry-list dd { text-wrap: balance; }
+    h1, h2, h3, h4, .callout, .speech, .future-final, .catch, .final, .big,
+    .quote, .em-line, .checklist-after, .entry-foot .msg, .entry-thanks, .entry-list dd { text-wrap: balance; }
     strong { color: var(--teal-deep); font-weight: 700; }
     .marker { background: linear-gradient(transparent 62%, rgba(0, 128, 128, .16) 62%); font-weight: 700; color: var(--teal-deep); }
     .pc { display: none; }
@@ -92,11 +93,15 @@
     .label { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--teal); font-size: 12px; font-weight: 600; letter-spacing: .1em; line-height: 1.333; text-transform: uppercase; margin-bottom: 10px; }
     .label::before, .label::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .5; }
     .h2 { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 24px; line-height: 1.333; text-align: center; margin: 0 0 40px; }
+    .h2::after { content: ""; display: block; width: 48px; height: 4px; margin: 16px auto 0; border-radius: 999px; background: var(--teal); }
     .h2--s { font-size: 20px; line-height: 1.4; }
     .h2--m { font-size: 22px; line-height: 1.375; }
     .h2--sans { font-family: var(--sans); font-feature-settings: normal; }
     .h3 { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 20px; line-height: 1.375; text-align: center; margin: 0 0 28px; }
     .lead-center { text-align: center; }
+    .nowrap { white-space: nowrap; }
+    /* 左寄せ・センター配置：行頭は左でそろえ、文章のかたまりはページ中央に置く */
+    .center-left { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; text-align: left; }
 
     /* ボタン */
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 14px 34px; border-radius: 999px; border: 0; background: var(--teal); color: #fff; text-decoration: none; font-family: var(--sans); font-weight: 700; font-size: 16px; line-height: 1.5; box-shadow: 0 8px 20px -8px rgba(0, 107, 107, .6); transition: background .2s, transform .2s; cursor: pointer; }
@@ -195,25 +200,27 @@
     .note-card .final { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 24px; line-height: 1.333; margin-top: 10px; }
 
     /* ========== 講師 ========== */
-    .teacher-head { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; margin-bottom: 34px; }
+    .teacher-head { display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center; margin-bottom: 34px; }
     .teacher-photo { position: relative; width: 148px; height: 148px; flex-shrink: 0; }
     .teacher-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 6px rgba(0, 128, 128, .14), var(--shadow); }
     .teacher-photo .tag { position: absolute; right: 0; bottom: 4px; background: var(--teal); color: #fff; font-size: 10px; font-weight: 700; padding: 1px 10px; border-radius: 999px; }
-    .teacher-head .label { margin-bottom: 6px; }
-    .teacher-head .h2 { margin-bottom: 4px; }
-    .teacher-head .by { font-size: 14px; color: var(--ink-soft); }
+    .teacher-head .label { margin-bottom: 12px; }
+    .teacher-head .h2 { margin-bottom: 12px; line-height: 1.55; }
+    .teacher-head .h2::after { margin-top: 14px; }
+    .teacher-head .by { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
     @media (min-width: 640px) {
       .teacher-head { flex-direction: row; text-align: left; gap: 28px; }
       .teacher-head .label { justify-content: flex-start; }
       .teacher-head .label::after { display: none; }
       .teacher-head .h2 { text-align: left; }
+      .teacher-head .h2::after { margin-left: 0; }
     }
-    .message-highlight { margin: 30px 0; padding: 26px 22px; border-radius: var(--radius); background: var(--mint); font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.556; text-align: center; }
+    .message-highlight { margin: 30px 0; padding: 26px 16px; border-radius: var(--radius); background: var(--mint); font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: min(18px, calc((100vw - 72px) / 17)); line-height: 1.556; text-align: center; }
 
     /* 動画枠 */
     .video-block { margin-top: 56px; }
     .video-title { text-align: center; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 20px; line-height: 1.375; margin: 0 0 6px; }
-    .video-sub { text-align: center; font-size: 14px; color: var(--ink-soft); margin-bottom: 18px; }
+    .video-sub { font-size: 14px; color: var(--ink-soft); margin-bottom: 18px; }
     .video-frame {
       position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden;
       background: #0f3d3d; box-shadow: var(--shadow);
@@ -234,7 +241,7 @@
     .video-placeholder p { margin: 0; font-size: 14px; opacity: .9; line-height: 1.7; }
 
     /* ========== 講座内容 ========== */
-    .center-question { text-align: center; margin: 24px 0; font-weight: 700; color: var(--teal-deep); font-size: 16px; line-height: 1.625; }
+    .center-question { text-align: left; margin: 24px 0; font-weight: 700; color: var(--teal-deep); font-size: min(20px, calc((100vw - 40px) / 17.5)); line-height: 1.5; }
     .overview { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 40px 0 64px; }
     @media (min-width: 640px) { .overview { grid-template-columns: repeat(4, 1fr); } }
     .overview div {
@@ -266,9 +273,10 @@
 
     .bonus {
       margin-top: 36px; position: relative; border-radius: var(--radius); padding: 28px 22px 24px; text-align: center;
-      background: #fff; border: 2px solid var(--accent);
+      background: var(--cream); border: 2px solid rgba(198, 161, 91, .5);
     }
-    .bonus .ribbon { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--accent); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; padding: 3px 16px; border-radius: 999px; }
+    .bonus .ribbon { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--gold); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; padding: 3px 16px; border-radius: 999px; }
+    .bonus .gold { color: var(--gold); }
     .bonus h4 { margin: 0 0 8px; font-family: var(--mincho); font-feature-settings: "palt"; font-size: 16px; line-height: 1.375; color: var(--teal-deep); }
     .bonus p { font-size: 14px; line-height: 1.625; }
 
@@ -322,6 +330,7 @@
     .closing-photo { margin: 0 0 40px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
     .closing-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
     .voice-quotes { display: grid; gap: 12px; margin: 28px 0; }
+    .voice-quotes .center-left { display: block; }
     .voice-quotes p { margin: 0; text-align: center; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 16px; line-height: 1.625; background: var(--cream); border-radius: 14px; padding: 14px 16px; }
     .closing-final { text-align: center; margin-top: 40px; }
     .closing-final .catch { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 24px; line-height: 1.333; margin-bottom: 14px; }
@@ -378,7 +387,7 @@
       .note-card p { font-size: 16px; line-height: 1.5; }
       .note-card .final, .closing-final .catch { font-size: 30px; line-height: 1.2; }
       .message-highlight { font-size: 20px; line-height: 1.4; }
-      .center-question { font-size: 18px; line-height: 1.556; }
+      .center-question { font-size: 22px; line-height: 1.4; }
       .step-card h4 { font-size: 18px; line-height: 1.556; }
       .step-card p { font-size: 14px; line-height: 1.625; }
       .bonus h4 { font-size: 20px; line-height: 1.4; }
@@ -512,10 +521,12 @@
       <p class="lead-center"><strong>もしかしたら、最初に変えるべきなのは、<br>子どもではないのかもしれません。</strong></p>
 
       <div class="note-card">
-        <p>誤解しないでくださいね。<br>
-          「親がもっとがんばらなきゃいけない」と責めているわけではありません。<br>
-          「親が変われば、子どもも変わる」という安易な話がしたいわけでもありません。</p>
-        <p>僕が心から伝えたいのは、</p>
+        <div class="center-left">
+          <p>誤解しないでくださいね。<br>
+            「親がもっとがんばらなきゃいけない」と責めているわけではありません。<br>
+            「親が変われば、子どもも変わる」という安易な話がしたいわけでもありません。</p>
+          <p>僕が心から伝えたいのは、</p>
+        </div>
         <div class="final">まず、あなた自身が<br>元気になることです。</div>
       </div>
     </div>
@@ -541,8 +552,9 @@
 
       <div class="message-highlight">
         僕は知っています。<br>
-        不登校なんかで人生は終わりません。<br>
-        いやむしろ、ここから新しい人生が<br class="sp">始まるのだと、僕は思うのです。
+        <span class="nowrap">不登校なんかで人生は終わりません。</span><br>
+        いやむしろ、ここから新しい人生が<br>
+        始まるのだと、僕は思うのです。
       </div>
 
       <p>学校に行くことは人生のゴールではありません。<br>子どもが幸せになるための、道のりの１つです。</p>
@@ -555,7 +567,7 @@
            IDが入ると「準備中」の表示が自動で動画に置き換わります。 -->
       <div class="video-block">
         <h3 class="video-title">ひら先生からのメッセージ動画</h3>
-        <p class="video-sub">講座に込めた想いを、ひら先生ご本人の声でお届けします。</p>
+        <p class="video-sub center-left">講座に込めた想いを、ひら先生ご本人の声で<br>お届けします。</p>
         <div class="video-frame" id="video-frame">
           <div class="video-placeholder">
             <span class="badge-prep">準備中</span>
@@ -651,8 +663,8 @@
 
       <div class="bonus">
         <span class="ribbon">SPECIAL BONUS</span>
-        <h4>【特別特典】<br>個別セッション（1回）プレゼント</h4>
-        <p>講座の学びをあなたの状況に合わせ、全体では話しきれない悩みや想いも含めてじっくり個別にお話しできる特別な時間です。</p>
+        <h4><span class="gold">【特別特典】</span><br>個別セッション（1回）プレゼント</h4>
+        <p class="center-left">講座の学びをあなたの状況に合わせ、全体では話しきれない悩みや想いも含めてじっくり個別にお話しできる特別な時間です。</p>
       </div>
 
       <div class="cta-wrap">
@@ -775,9 +787,9 @@
       <h2 class="h2">不登校を<br class="sp">「失った時間」ではなく、<br>「人生を見つめ直す時間」へ</h2>
       <p>今はまだ、先が見えなくて不安かもしれません。<br>でも、あきらめないでください。</p>
       <div class="voice-quotes">
-        <p>「不登校と向き合ったからこそ、今の私がある」</p>
-        <p>「あの時間があったからこそ、子どもと本当の信頼でつながれた」</p>
-        <p>「あのつらい経験があったからこそ、自分の人生を取り戻せた」</p>
+        <p><span class="center-left">不登校と向き合ったからこそ、<br>今の私がある</span></p>
+        <p><span class="center-left">あの時間があったからこそ、<br>子どもと本当の信頼でつながれた</span></p>
+        <p><span class="center-left">あのつらい経験があったからこそ、<br>自分の人生を取り戻せた</span></p>
       </div>
       <p class="lead-center"><strong>心からそう言える日は、必ずやってきます。</strong></p>
       <p>子どものために自分を置き去りにしてきた優しいあなたへ。</p>
@@ -834,12 +846,6 @@
           <summary>受講料の支払い方法を教えてください。<span class="badge-tmp">仮</span></summary>
           <div class="answer">
             <p>お支払い方法は、次回募集の開始時にお申込みページでご案内いたします。</p>
-          </div>
-        </details>
-        <details>
-          <summary>都合が合わず、参加できない回があっても大丈夫ですか？<span class="badge-tmp">仮</span></summary>
-          <div class="answer">
-            <p>はい、大丈夫です。参加できなかった回は、アーカイブ（録画）で後からご視聴いただけます。</p>
           </div>
         </details>
         <details>
