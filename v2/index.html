@@ -16,7 +16,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 
   <script>
     /* =====================================================================
@@ -49,7 +49,7 @@
       --ink-soft: #6B6862;
       --line: #E4DED2;
       --accent: #E87A5D;
-      --mincho: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+      --mincho: "Noto Serif JP", "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
       --sans: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
       --radius: 16px;
       --shadow: 0 10px 30px -12px rgba(0, 80, 80, .22);
@@ -70,8 +70,11 @@
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; }
     p { margin: 0 0 24px; }
-    @media (min-width: 640px) { body { font-size: 18px; } .h2, .hero h1 { line-height: 1.25; } }
     p:last-child { margin-bottom: 0; }
+    /* 改行の調整：見出し・強調は行の長さをそろえ、本文は最終行が1〜2文字だけにならないように */
+    p, li, dd, summary { text-wrap: pretty; }
+    h1, h2, h3, h4, .callout, .message-highlight, .speech, .future-final, .catch, .final, .big,
+    .quote, .voice-quotes p, .em-line, .checklist-after, .entry-foot .msg, .entry-thanks, .center-question, .entry-list dd { text-wrap: balance; }
     strong { color: var(--teal-deep); font-weight: 700; }
     .marker { background: linear-gradient(transparent 62%, rgba(0, 128, 128, .16) 62%); font-weight: 700; color: var(--teal-deep); }
     .pc { display: none; }
@@ -86,33 +89,17 @@
     .bg-mint { background: var(--mint); }
 
     /* 見出し */
-    .label {
-      display: flex; align-items: center; justify-content: center; gap: 12px;
-      color: var(--teal); font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
-      margin-bottom: 14px;
-    }
+    .label { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--teal); font-size: 12px; font-weight: 600; letter-spacing: .1em; line-height: 1.333; text-transform: uppercase; margin-bottom: 10px; }
     .label::before, .label::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .5; }
-    .h2 {
-      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep);
-      font-size: clamp(20px, 5.4vw, 30px); line-height: 1.375;
-      text-align: center; margin: 0 0 40px;
-    }
-    .h3 {
-      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep);
-      font-size: clamp(19px, 4.8vw, 25px); line-height: 1.375; text-align: center; margin: 0 0 28px;
-    }
+    .h2 { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 24px; line-height: 1.333; text-align: center; margin: 0 0 40px; }
+    .h2--s { font-size: 20px; line-height: 1.4; }
+    .h2--m { font-size: 22px; line-height: 1.375; }
+    .h2--sans { font-family: var(--sans); font-feature-settings: normal; }
+    .h3 { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 20px; line-height: 1.375; text-align: center; margin: 0 0 28px; }
     .lead-center { text-align: center; }
 
     /* ボタン */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      min-height: 56px; padding: 14px 34px; border-radius: 999px; border: 0;
-      background: var(--teal); color: #fff; text-decoration: none;
-      font-family: var(--sans); font-weight: 700; font-size: 17px; letter-spacing: .06em;
-      box-shadow: 0 8px 20px -8px rgba(0, 107, 107, .6);
-      transition: background .2s, transform .2s;
-      cursor: pointer;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 14px 34px; border-radius: 999px; border: 0; background: var(--teal); color: #fff; text-decoration: none; font-family: var(--sans); font-weight: 700; font-size: 16px; line-height: 1.5; box-shadow: 0 8px 20px -8px rgba(0, 107, 107, .6); transition: background .2s, transform .2s; cursor: pointer; }
     .btn:hover { background: var(--teal-deep); transform: translateY(-1px); }
     .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
     .btn .arrow { width: 18px; height: 18px; }
@@ -159,25 +146,17 @@
     .hero::before { width: 360px; height: 360px; top: -120px; right: -120px; background: rgba(0, 128, 128, .12); }
     .hero::after { width: 300px; height: 300px; bottom: -120px; left: -120px; background: rgba(232, 122, 93, .10); }
     .hero .container { position: relative; z-index: 1; }
-    .hero-eyebrow {
-      display: inline-block; padding: 6px 18px; border-radius: 999px;
-      background: var(--mint); color: var(--teal-deep); font-size: 13px; font-weight: 700; letter-spacing: .06em;
-      margin-bottom: 26px;
-    }
-    .hero h1 {
-      font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
-      font-size: clamp(30px, 8.6vw, 54px); line-height: 1.375; letter-spacing: .02em;
-      margin: 0 0 28px;
-    }
+    .hero-eyebrow { display: inline-block; padding: 6px 18px; border-radius: 999px; background: #fff; border: 1px solid rgba(0, 128, 128, .2); color: var(--teal-deep); font-size: 12px; font-weight: 400; line-height: 1.333; margin-bottom: 26px; }
+    .hero h1 { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: min(30px, 8vw); line-height: 1.2; margin: 0 0 28px; }
     .hero h1 .accent { color: var(--teal); }
-    .hero-lead { font-size: clamp(15px, 4vw, 18px); line-height: 1.625; margin-bottom: 30px; }
+    .hero-lead { font-family: var(--mincho); font-feature-settings: "palt"; font-size: 18px; line-height: 1.556; margin-bottom: 30px; }
     .hero-course {
       display: inline-block; text-align: center;
       background: #fff; border: 1px solid rgba(0, 128, 128, .25); border-radius: var(--radius);
       padding: 18px 22px; margin-bottom: 34px; box-shadow: var(--shadow);
     }
-    .hero-course .name { font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 20px; letter-spacing: .1em; }
-    .hero-course .desc { font-size: 14px; color: var(--ink-soft); line-height: 1.625; margin-top: 6px; }
+    .hero-course .name { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 20px; line-height: 1.4; }
+    .hero-course .desc { font-family: var(--mincho); font-feature-settings: "palt"; font-size: 15px; color: var(--ink); line-height: 1.625; margin-top: 6px; }
     /* ファーストビューの写真：LPの幅いっぱい、右側の余白に講師名を重ねる */
     .hero-photo { position: relative; margin: 40px -20px 0; }
     .hero-photo img { width: 100%; aspect-ratio: 1024 / 682; object-fit: cover; }
@@ -186,35 +165,24 @@
       text-align: center; color: var(--ink-soft); font-size: clamp(12px, 3.4vw, 15px); line-height: 1.5;
       text-shadow: 0 0 8px rgba(255, 255, 255, .9);
     }
-    .hero-photo figcaption b {
-      display: block; margin-top: 2px; color: var(--teal-deep); font-family: var(--mincho); font-weight: 800;
-      font-size: clamp(22px, 6.4vw, 34px); letter-spacing: .1em; line-height: 1.3;
-    }
+    .hero-photo figcaption b { display: block; margin-top: 2px; color: var(--teal-deep); font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; font-size: clamp(22px, 6.4vw, 34px); line-height: 1.3; }
     @media (min-width: 800px) {
       .hero-photo { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
     }
 
     /* ========== 共感 ========== */
     .quote-list { margin: 30px 0; display: grid; gap: 12px; }
-    .quote {
-      position: relative; background: var(--cream); border-radius: 14px; padding: 14px 20px 14px 22px;
-      font-family: var(--mincho); font-weight: 600; color: var(--teal-deep); font-size: 17px; line-height: 1.625;
-      border-left: 4px solid rgba(0, 128, 128, .45);
-    }
-    .callout {
-      margin-top: 36px; text-align: center; padding: 28px 20px; border-radius: var(--radius);
-      background: var(--mint);
-      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: clamp(18px, 4.8vw, 22px); line-height: 1.625;
-    }
-    .callout small { display: block; font-family: var(--sans); font-weight: 500; font-size: 15px; color: var(--ink); margin-top: 6px; }
+    .quote { position: relative; background: var(--cream); border-radius: 14px; padding: 14px 20px 14px 22px; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--ink); font-size: 16px; line-height: 1.5; border-left: 4px solid rgba(0, 128, 128, .45); }
+    .callout { margin-top: 36px; text-align: center; padding: 28px 20px; border-radius: var(--radius); background: var(--mint); font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 17px; line-height: 1.625; letter-spacing: -.025em; }
+    .callout small { display: block; font-size: 1em; }
 
     /* ========== 気づき ========== */
     .insight-box {
       background: #fff; border-radius: var(--radius); box-shadow: var(--shadow);
       padding: 30px 22px; margin: 32px 0; text-align: center;
     }
-    .insight-box .kicker { font-size: 13px; color: var(--teal); font-weight: 700; letter-spacing: .1em; margin-bottom: 8px; }
-    .insight-box .big { font-family: var(--mincho); font-weight: 800; color: var(--teal-deep); font-size: clamp(19px, 5vw, 24px); line-height: 1.5; margin: 0; }
+    .insight-box .kicker { font-size: 14px; color: var(--teal); font-weight: 700; line-height: 1.429; margin-bottom: 8px; }
+    .insight-box .big { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 20px; line-height: 1.4; margin: 0; }
     .belief-list { list-style: none; padding: 0; margin: 20px 0; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
     .belief-list li {
       background: #fff; border: 1px dashed rgba(0, 107, 107, .4); border-radius: 999px;
@@ -223,19 +191,14 @@
     .note-card {
       border-top: 1px solid var(--line); margin-top: 36px; padding-top: 30px; text-align: center;
     }
-    .note-card .final {
-      font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
-      font-size: clamp(22px, 6vw, 30px); line-height: 1.5; margin-top: 10px;
-    }
+    .note-card p { font-size: 14px; line-height: 1.429; }
+    .note-card .final { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 24px; line-height: 1.333; margin-top: 10px; }
 
     /* ========== 講師 ========== */
     .teacher-head { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; margin-bottom: 34px; }
     .teacher-photo { position: relative; width: 148px; height: 148px; flex-shrink: 0; }
     .teacher-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 6px rgba(0, 128, 128, .14), var(--shadow); }
-    .teacher-photo .tag {
-      position: absolute; right: 0; bottom: 4px; background: var(--teal); color: #fff;
-      font-size: 11px; font-weight: 700; padding: 1px 10px; border-radius: 999px; letter-spacing: .1em;
-    }
+    .teacher-photo .tag { position: absolute; right: 0; bottom: 4px; background: var(--teal); color: #fff; font-size: 10px; font-weight: 700; padding: 1px 10px; border-radius: 999px; }
     .teacher-head .label { margin-bottom: 6px; }
     .teacher-head .h2 { margin-bottom: 4px; }
     .teacher-head .by { font-size: 14px; color: var(--ink-soft); }
@@ -245,14 +208,11 @@
       .teacher-head .label::after { display: none; }
       .teacher-head .h2 { text-align: left; }
     }
-    .message-highlight {
-      margin: 30px 0; padding: 26px 22px; border-radius: var(--radius); background: var(--mint);
-      font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: clamp(17px, 4.6vw, 21px); line-height: 1.625; text-align: center;
-    }
+    .message-highlight { margin: 30px 0; padding: 26px 22px; border-radius: var(--radius); background: var(--mint); font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.556; text-align: center; }
 
     /* 動画枠 */
     .video-block { margin-top: 56px; }
-    .video-title { text-align: center; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 19px; margin: 0 0 6px; }
+    .video-title { text-align: center; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 20px; line-height: 1.375; margin: 0 0 6px; }
     .video-sub { text-align: center; font-size: 14px; color: var(--ink-soft); margin-bottom: 18px; }
     .video-frame {
       position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden;
@@ -274,17 +234,14 @@
     .video-placeholder p { margin: 0; font-size: 14px; opacity: .9; line-height: 1.7; }
 
     /* ========== 講座内容 ========== */
-    .center-question {
-      text-align: center; margin: 28px 0; font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
-      font-size: clamp(20px, 5.4vw, 26px); line-height: 1.5;
-    }
+    .center-question { text-align: center; margin: 24px 0; font-weight: 700; color: var(--teal-deep); font-size: 16px; line-height: 1.625; }
     .overview { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 40px 0 64px; }
     @media (min-width: 640px) { .overview { grid-template-columns: repeat(4, 1fr); } }
     .overview div {
       background: #fff; border-radius: 14px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 14px -8px rgba(0, 80, 80, .3);
     }
-    .overview dt { font-size: 12px; color: var(--teal); font-weight: 700; letter-spacing: .1em; }
-    .overview dd { margin: 4px 0 0; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 17px; line-height: 1.5; }
+    .overview dt { font-size: 12px; color: var(--teal); font-weight: 700; letter-spacing: .05em; line-height: 1.333; }
+    .overview dd { margin: 4px 0 0; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 16px; line-height: 1.5; }
     .overview dd small { display: block; font-family: var(--sans); font-weight: 400; font-size: 12px; color: var(--ink-soft); }
 
     .steps { list-style: none; margin: 0; padding: 0; position: relative; }
@@ -298,45 +255,38 @@
       background: var(--teal); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center;
       font-weight: 700; line-height: 1.1; box-shadow: 0 0 0 5px var(--mint);
     }
-    .step-num small { font-size: 9px; letter-spacing: .1em; }
+    .step-num small { font-size: 9px; letter-spacing: .05em; }
     .step-num span { font-size: 19px; }
     .step.extra .step-num { background: #fff; color: var(--teal-deep); border: 2px dashed var(--teal); font-size: 13px; }
     .step-card { background: #fff; border-radius: 14px; padding: 16px 18px; box-shadow: 0 4px 14px -8px rgba(0, 80, 80, .3); }
-    .step-card .meta { font-size: 12px; color: var(--teal); font-weight: 700; letter-spacing: .12em; }
-    .step-card h4 { margin: 2px 0 6px; font-family: var(--mincho); font-size: 18px; color: var(--teal-deep); line-height: 1.5; }
-    .step-card h4 small { font-family: var(--sans); font-size: 13px; color: var(--ink-soft); font-weight: 500; margin-left: 4px; }
-    .step-card p { font-size: 15px; line-height: 1.625; }
+    .step-card .meta { font-size: 11px; color: var(--teal); font-weight: 700; letter-spacing: .05em; line-height: 1.9; }
+    .step-card h4 { margin: 2px 0 6px; font-family: var(--mincho); font-feature-settings: "palt"; font-size: 15px; color: var(--teal-deep); line-height: 1.375; }
+    .step-card h4 small { font-size: 14px; color: var(--ink-soft); font-weight: 400; margin-left: 4px; }
+    .step-card p { font-size: 12px; line-height: 1.625; }
 
     .bonus {
       margin-top: 36px; position: relative; border-radius: var(--radius); padding: 28px 22px 24px; text-align: center;
       background: #fff; border: 2px solid var(--accent);
     }
-    .bonus .ribbon {
-      position: absolute; top: -14px; left: 50%; transform: translateX(-50%); white-space: nowrap;
-      background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .14em; padding: 3px 16px; border-radius: 999px;
-    }
-    .bonus h4 { margin: 0 0 8px; font-family: var(--mincho); font-size: 20px; color: var(--teal-deep); }
-    .bonus p { font-size: 15px; }
+    .bonus .ribbon { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--accent); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; padding: 3px 16px; border-radius: 999px; }
+    .bonus h4 { margin: 0 0 8px; font-family: var(--mincho); font-feature-settings: "palt"; font-size: 16px; line-height: 1.375; color: var(--teal-deep); }
+    .bonus p { font-size: 14px; line-height: 1.625; }
 
     /* 申込みボタン（文言と行き先は募集状態に合わせてJSで自動切り替え） */
     .cta-wrap { text-align: center; margin-top: 44px; }
     .cta-wrap .btn { min-width: min(100%, 320px); }
-    .cta-wrap .cta-note { font-size: 13px; color: var(--ink-soft); margin: 10px 0 0; }
+    .cta-wrap .cta-note { font-size: 12px; line-height: 1.625; color: var(--ink-soft); margin: 10px 0 0; }
 
     /* ========== 未来 ========== */
     .story { position: relative; background: #fff; border-radius: var(--radius); padding: 28px 22px; box-shadow: var(--shadow); margin: 26px 0; }
-    .story .speech {
-      display: block; margin: 12px 0; padding: 12px 18px; border-radius: 18px 18px 18px 4px;
-      background: var(--mint); color: var(--teal-deep); font-weight: 700; font-family: var(--mincho); font-size: 17px;
-    }
+    .story p { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; font-size: 15px; line-height: 1.625; color: var(--ink); }
+    .story .speech { display: block; margin: 12px 0; padding: 12px 18px; border-radius: 18px 18px 18px 4px; background: var(--mint); color: var(--teal-deep); font-weight: 700; font-family: var(--mincho); font-feature-settings: "palt"; font-size: 18px; line-height: 1.556; }
     .daily { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
     .daily span { background: var(--cream); border-radius: 999px; padding: 4px 14px; font-size: 14px; }
-    .future-final {
-      text-align: center; margin-top: 36px; font-family: var(--mincho); font-weight: 800; color: var(--teal-deep);
-      font-size: clamp(20px, 5.4vw, 26px); line-height: 1.5;
-    }
+    .future-final { text-align: center; margin-top: 36px; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.556; }
 
     /* ========== 受講者の声 ========== */
+    .em-line { text-align: center; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 17px; line-height: 1.375; }
     .voices { display: grid; gap: 18px; margin-top: 8px; }
     @media (min-width: 768px) { .voices { grid-template-columns: repeat(3, 1fr); } }
     .voice {
@@ -352,7 +302,7 @@
     .voice-avatar svg { width: 24px; height: 24px; }
     .voice-meta { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
     .voice-meta b { display: block; color: var(--teal-deep); font-size: 15px; }
-    .voice h4 { margin: 0 0 8px; font-family: var(--mincho); color: var(--teal-deep); font-size: 17px; line-height: 1.6; }
+    .voice h4 { margin: 0 0 8px; font-family: var(--mincho); font-feature-settings: "palt"; color: var(--teal-deep); font-size: 16px; line-height: 1.5; }
     .voice p { font-size: 14px; color: #8A867E; line-height: 1.625; }
     .voices-note { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 22px; }
 
@@ -366,26 +316,20 @@
       content: ""; position: absolute; left: 18px; top: 50%; width: 22px; height: 22px; margin-top: -11px; border-radius: 6px;
       background: var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 16px no-repeat;
     }
-    .checklist-after { text-align: center; margin-top: 28px; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.625; }
+    .checklist-after { text-align: center; margin-top: 28px; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.556; }
 
     /* ========== 締めのメッセージ ========== */
     .closing-photo { margin: 0 0 40px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
     .closing-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
     .voice-quotes { display: grid; gap: 12px; margin: 28px 0; }
-    .voice-quotes p {
-      margin: 0; text-align: center; font-family: var(--mincho); font-weight: 600; color: var(--teal-deep); font-size: 17px; line-height: 1.625;
-      background: var(--cream); border-radius: 14px; padding: 14px 16px;
-    }
+    .voice-quotes p { margin: 0; text-align: center; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 16px; line-height: 1.625; background: var(--cream); border-radius: 14px; padding: 14px 16px; }
     .closing-final { text-align: center; margin-top: 40px; }
-    .closing-final .catch { font-family: var(--mincho); font-weight: 800; color: var(--teal-deep); font-size: clamp(22px, 6vw, 30px); line-height: 1.5; margin-bottom: 14px; }
+    .closing-final .catch { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 24px; line-height: 1.333; margin-bottom: 14px; }
 
     /* ========== FAQ ========== */
     .faq { display: grid; gap: 12px; }
     .faq details { background: #fff; border-radius: 14px; box-shadow: 0 4px 14px -10px rgba(0, 80, 80, .35); }
-    .faq summary {
-      list-style: none; cursor: pointer; position: relative;
-      padding: 18px 48px 18px 54px; font-weight: 700; color: var(--teal-deep); line-height: 1.7;
-    }
+    .faq summary { list-style: none; cursor: pointer; position: relative; padding: 18px 48px 18px 54px; font-size: 16px; font-weight: 700; color: var(--teal-deep); line-height: 1.5; }
     .faq summary::-webkit-details-marker { display: none; }
     .faq summary::before {
       content: "Q"; position: absolute; left: 18px; top: 16px; width: 26px; height: 26px; border-radius: 50%;
@@ -397,26 +341,57 @@
     }
     .faq details[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
     .faq summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 14px; }
-    .faq .answer { padding: 0 20px 20px 54px; font-size: 15px; line-height: 1.625; }
+    .faq .answer { padding: 0 20px 20px 54px; font-size: 14px; line-height: 1.625; }
     .faq .answer b { color: var(--teal-deep); }
 
     /* ========== 募集要項 ========== */
     .entry-card { background: #fff; border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
     .entry-head { background: var(--teal-deep); color: #fff; text-align: center; padding: 26px 18px; }
-    .entry-head .course { font-family: var(--mincho); font-weight: 800; font-size: 24px; letter-spacing: .12em; }
+    .entry-head .course { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; font-size: 24px; line-height: 1.333; }
     .entry-head .sub { font-size: 14px; opacity: .9; line-height: 1.625; margin-top: 4px; }
     .entry-list { margin: 0; padding: 8px 22px; }
     .entry-list > div { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 16px 0; border-bottom: 1px solid var(--line); }
     .entry-list > div:last-child { border-bottom: 0; }
     @media (min-width: 640px) { .entry-list > div { grid-template-columns: 150px 1fr; gap: 16px; } }
-    .entry-list dt { font-size: 13px; font-weight: 700; color: var(--teal); letter-spacing: .08em; }
-    .entry-list dd { margin: 0; font-weight: 500; line-height: 1.625; }
+    .entry-list dt { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: .05em; line-height: 1.333; }
+    .entry-list dd { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.429; }
     .price-regular { color: var(--ink-soft); text-decoration: line-through; font-size: 14px; margin-right: 8px; }
-    .price-special { color: var(--accent); font-weight: 800; font-size: 24px; font-family: var(--mincho); }
+    .price-special { color: var(--accent); font-weight: 700; font-size: 24px; line-height: 1.333; }
     .entry-foot { padding: 24px 22px 30px; text-align: center; background: var(--cream); }
-    .entry-foot .msg { font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.625; margin-bottom: 16px; }
-    .entry-foot .small { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
-    .entry-thanks { text-align: center; margin-top: 36px; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.625; }
+    .entry-foot .msg { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.375; margin-bottom: 16px; }
+    .entry-foot .small { font-size: 12px; line-height: 1.625; color: var(--ink-soft); margin-top: 12px; }
+    .entry-thanks { text-align: center; margin-top: 36px; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 16px; line-height: 1.625; }
+
+    /* ========== PC（640px以上）の文字サイズ：V1 に合わせる ========== */
+    @media (min-width: 640px) {
+      body { font-size: 18px; line-height: 1.556; }
+      .h2, .h2--s, .h2--m { font-size: 30px; line-height: 1.2; }
+      .h3 { font-size: 24px; line-height: 1.333; }
+      .btn { font-size: 18px; line-height: 1.556; }
+      .hero-eyebrow { font-size: 14px; line-height: 1.429; }
+      .hero h1 { font-size: 48px; line-height: 1; }
+      .hero-lead { font-size: 24px; line-height: 1.333; font-weight: 400; }
+      .hero-course .desc { font-size: 16px; line-height: 1.5; }
+      .quote, .voice-quotes p { font-size: 18px; line-height: 1.556; }
+      .callout { font-size: 20px; line-height: 1.4; }
+      .insight-box .big { font-size: 24px; line-height: 1.333; }
+      .note-card p { font-size: 16px; line-height: 1.5; }
+      .note-card .final, .closing-final .catch { font-size: 30px; line-height: 1.2; }
+      .message-highlight { font-size: 20px; line-height: 1.4; }
+      .center-question { font-size: 18px; line-height: 1.556; }
+      .step-card h4 { font-size: 18px; line-height: 1.556; }
+      .step-card p { font-size: 14px; line-height: 1.625; }
+      .bonus h4 { font-size: 20px; line-height: 1.4; }
+      .bonus p { font-size: 16px; line-height: 1.5; }
+      .story p { font-size: 18px; line-height: 1.556; }
+      .story .speech { font-size: 20px; line-height: 1.4; }
+      .future-final, .checklist-after { font-size: 24px; line-height: 1.333; }
+      .em-line { font-size: 20px; line-height: 1.4; }
+      .faq summary { font-size: 18px; line-height: 1.556; }
+      .faq .answer { font-size: 16px; line-height: 1.5; }
+      .entry-list dd { font-size: 16px; line-height: 1.5; }
+      .entry-thanks { font-size: 18px; line-height: 1.556; }
+    }
 
     /* 状態によって表示を切り替える（JSで body[data-state] を設定） */
     [data-when] { display: none; }
@@ -427,10 +402,10 @@
     body:not([data-state])    [data-when~="prep"] { display: revert; }
 
     /* ========== フッター ========== */
-    .footer { background: var(--teal-deep); color: rgba(255, 255, 255, .88); text-align: center; padding: 40px 20px; font-size: 13px; line-height: 1.625; }
+    .footer { background: var(--teal-deep); color: rgba(255, 255, 255, .88); text-align: center; padding: 40px 20px; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; font-size: 14px; line-height: 1.625; }
     body.has-floating .footer { padding-bottom: 110px; }
-    .footer .course { font-family: var(--mincho); font-weight: 700; font-size: 18px; color: #fff; letter-spacing: .1em; }
-    .footer small { display: block; margin-top: 16px; opacity: .7; }
+    .footer .course { font-size: 14px; color: #fff; }
+    .footer small { display: block; margin-top: 16px; opacity: .7; font-family: var(--sans); font-feature-settings: normal; font-weight: 400; font-size: 12px; }
     @media (min-width: 768px) { body.has-floating .footer { padding-bottom: 40px; } }
 
     /* ========== スマホ用 追従ボタン ========== */
@@ -464,7 +439,7 @@
   <header class="hero">
     <div class="container">
       <span class="hero-eyebrow">不登校のお子さんを支える保護者の方へ</span>
-      <h1>不登校を、<br><span class="accent">笑いながら</span><br class="sp">越えていく。</h1>
+      <h1>不登校を、<br><span class="accent">笑いながら</span>越えていく。</h1>
       <p class="hero-lead">
         もう、ひとりで抱え込まなくて大丈夫。<br>
         あなた自身の笑顔と人生を、<br class="sp">ここからもう一度動かしませんか？
@@ -489,9 +464,9 @@
   <section class="section bg-white">
     <div class="container">
       <div class="label">Sympathy</div>
-      <h2 class="h2">学校に行ってほしいと<br class="sp">願うほど、<br class="pc">苦しく<br class="sp">なっていませんか？</h2>
+      <h2 class="h2 h2--s">学校に行ってほしいと願うほど、<br>苦しくなっていませんか？</h2>
 
-      <p>毎朝、布団から起きてこない子どもの背中を見つめながら──</p>
+      <p>毎朝、布団から起きてこない子どもの背中を見つめながら、</p>
       <div class="quote-list">
         <div class="quote">「今日、どうするの？」</div>
         <div class="quote">「学校は？」</div>
@@ -508,7 +483,7 @@
 
       <div class="callout">
         もう大丈夫。
-        <small>まずはどうか、<br class="sp">自分を認めてあげてください。</small>
+        <small>まずはどうか、自分を認めてあげてください。</small>
       </div>
     </div>
   </section>
@@ -566,7 +541,7 @@
 
       <div class="message-highlight">
         僕は知っています。<br>
-        不登校なんかで<br class="sp">人生は終わりません。<br>
+        不登校なんかで人生は終わりません。<br>
         いやむしろ、ここから新しい人生が<br class="sp">始まるのだと、僕は思うのです。
       </div>
 
@@ -603,11 +578,11 @@
   <section class="section bg-mint">
     <div class="container">
       <div class="label">Methodology</div>
-      <h2 class="h2">子どもをどうにかする前に、<br>「私はどう生きたいか」を<br class="sp">決める3ヶ月</h2>
+      <h2 class="h2 h2--m">子どもをどうにかする前に、<br>「私はどう生きたいか」を<br class="sp">決める3ヶ月</h2>
 
       <p>だからこそ、この講座では<span class="marker">「子どもをどう変えるか」は一切考えません。</span>向き合うのは、あなた自身です。</p>
       <p>3ヶ月かけてじっくりと見つめるのは、</p>
-      <p class="center-question">「私は、これから<br class="sp">どう生きたいのか？」</p>
+      <p class="center-question">「私は、これからどう生きたいのか？」</p>
       <p>という問いです。</p>
       <p>自分の気持ちを知り、自分を縛っていた思い込みに気づき、本当に大切にしたい価値観を思い出す。親として、そして一人の人間としての「自分の軸」を取り戻していきます。</p>
       <p>親が元気になり、心にふっと余白が生まれると、目の前の景色がガラリと変わります。</p>
@@ -676,7 +651,7 @@
 
       <div class="bonus">
         <span class="ribbon">SPECIAL BONUS</span>
-        <h4>【特別特典】<br class="sp">個別セッション（1回）<br class="sp">プレゼント</h4>
+        <h4>【特別特典】<br>個別セッション（1回）プレゼント</h4>
         <p>講座の学びをあなたの状況に合わせ、全体では話しきれない悩みや想いも含めてじっくり個別にお話しできる特別な時間です。</p>
       </div>
 
@@ -708,7 +683,7 @@
       </div>
       <p>「私は今日、何がしたいかな？」と、自分に問いかけられる日々。</p>
       <p>ある日、リビングで子どもと何気ないテレビをみて、ゲラゲラ笑っている。<br>そのふとした瞬間に、ハッと気づくのです。</p>
-      <p class="lead-center"><strong>「あれ？私、最近すごく笑ってるな」</strong></p>
+      <p class="em-line">「あれ？私、最近すごく笑ってるな」</p>
       <p>子どもが学校に行ったから笑えているのではありません。<br><span class="marker">あなた自身が元気を取り戻したから、世界の見え方が変わったのです。</span></p>
       <p>もし子どもがまだ学校に行っていなかったとしても、「私なら大丈夫。この子なら大丈夫」──そう心から信じて、どっしりと構えていられる。</p>
 
@@ -718,7 +693,7 @@
         <p>そのとき、胸の奥からじわっとあたたかい涙がこぼれ、「私、自分の人生を楽しめるようになったんだ」と実感するはずです。</p>
       </div>
 
-      <p class="future-final">あなたとお子さんの<br class="sp">「新しい笑顔」を、<br>ここから一緒に。</p>
+      <p class="future-final">あなたとお子さんの「新しい笑顔」を、<br>ここから一緒に。</p>
       <div class="cta-wrap">
         <a class="btn" data-cta href="#apply">募集要項を見る</a>
         <p class="cta-note" data-cta-note hidden></p>
@@ -825,7 +800,7 @@
   <section class="section bg-cream">
     <div class="container">
       <div class="label">Q&amp;A</div>
-      <h2 class="h2">よくある質問</h2>
+      <h2 class="h2 h2--sans">よくある質問</h2>
       <div class="faq">
         <details>
           <summary>顔出し（カメラオン）は必要ですか？</summary>
