@@ -178,16 +178,21 @@
     }
     .hero-course .name { font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 20px; letter-spacing: .1em; }
     .hero-course .desc { font-size: 14px; color: var(--ink-soft); line-height: 1.625; margin-top: 6px; }
-    .hero-teacher {
-      display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 36px;
-      font-size: 13px; color: var(--ink-soft); text-align: center; line-height: 1.6;
+    /* ファーストビューの写真：LPの幅いっぱい、右側の余白に講師名を重ねる */
+    .hero-photo { position: relative; margin: 40px -20px 0; }
+    .hero-photo img { width: 100%; aspect-ratio: 1024 / 682; object-fit: cover; }
+    .hero-photo figcaption {
+      position: absolute; left: 58%; right: 2%; top: 58%;
+      text-align: center; color: var(--ink-soft); font-size: clamp(12px, 3.4vw, 15px); line-height: 1.5;
+      text-shadow: 0 0 8px rgba(255, 255, 255, .9);
     }
-    .hero-teacher img {
-      width: 150px; height: 150px; border-radius: 50%; object-fit: cover; object-position: center 30%;
-      border: 4px solid #fff; box-shadow: 0 0 0 6px rgba(0, 128, 128, .14), var(--shadow);
+    .hero-photo figcaption b {
+      display: block; margin-top: 2px; color: var(--teal-deep); font-family: var(--mincho); font-weight: 800;
+      font-size: clamp(22px, 6.4vw, 34px); letter-spacing: .1em; line-height: 1.3;
     }
-    .hero-teacher b { display: block; color: var(--teal-deep); font-family: var(--mincho); font-size: 18px; }
-    @media (min-width: 640px) { .hero-teacher img { width: 170px; height: 170px; } }
+    @media (min-width: 800px) {
+      .hero-photo { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    }
 
     /* ========== 共感 ========== */
     .quote-list { margin: 30px 0; display: grid; gap: 12px; }
@@ -364,8 +369,8 @@
     .checklist-after { text-align: center; margin-top: 28px; font-family: var(--mincho); font-weight: 700; color: var(--teal-deep); font-size: 18px; line-height: 1.625; }
 
     /* ========== 締めのメッセージ ========== */
-    .closing-photo { margin: 0 0 40px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-    .closing-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 40% 30%; }
+    .closing-photo { max-width: 480px; margin: 0 auto 40px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .closing-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 35%; }
     .voice-quotes { display: grid; gap: 12px; margin: 28px 0; }
     .voice-quotes p {
       margin: 0; text-align: center; font-family: var(--mincho); font-weight: 600; color: var(--teal-deep); font-size: 17px; line-height: 1.625;
@@ -472,12 +477,11 @@
         <a class="btn" data-cta href="#apply">募集要項を見る</a>
         <p class="cta-note" data-cta-note hidden></p>
       </div>
-      <!-- ▼ ひら先生の写真：v2/images/hirasensei_profile.jpg を同じ名前の写真で上書きすると差し替わります
-           （正方形・600×600px 以上・顔が中央やや上にある写真がおすすめです） -->
-      <div class="hero-teacher">
-        <img src="images/hirasensei_profile.jpg" alt="ひら先生" width="170" height="170">
-        <div>講師・伴走者<b>ひら先生</b></div>
-      </div>
+      <!-- ▼ ひら先生の写真（v2/images/hirasensei_talk.jpg）。講師名は写真右側の余白に重ねて表示 -->
+      <figure class="hero-photo">
+        <img src="images/hirasensei_talk.jpg" alt="笑顔で語りかけるひら先生" width="1024" height="682">
+        <figcaption>講師・伴走者<b>ひら先生</b></figcaption>
+      </figure>
     </div>
   </header>
 
@@ -788,8 +792,9 @@
   <!-- ===== 締めのメッセージ（2枚目の写真） ===== -->
   <section class="section bg-white">
     <div class="container">
+      <!-- ▼ ひら先生の写真：v2/images/hirasensei_profile.jpg を同じ名前の写真で上書きすると差し替わります -->
       <figure class="closing-photo">
-        <img src="images/hirasensei_talk.jpg" alt="笑顔で語りかけるひら先生" width="1024" height="682" loading="lazy">
+        <img src="images/hirasensei_profile.jpg" alt="頬に手を当てて笑うひら先生" width="576" height="576" loading="lazy">
       </figure>
 
       <h2 class="h2">不登校を<br class="sp">「失った時間」ではなく、<br>「人生を見つめ直す時間」へ</h2>
