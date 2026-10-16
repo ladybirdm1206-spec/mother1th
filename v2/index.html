@@ -178,6 +178,8 @@
 
     /* ========== 共感 ========== */
     .quote-list { margin: 30px 0; display: grid; gap: 12px; }
+    /* 1行に収めたい吹き出し：狭い画面では文字を少しだけ小さくする */
+    .quote.one-line { white-space: nowrap; font-size: min(16px, calc((100vw - 86px) / 18.4)); }
     .quote { position: relative; background: var(--cream); border-radius: 14px; padding: 14px 20px 14px 22px; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--ink); font-size: 16px; line-height: 1.5; border-left: 4px solid rgba(0, 128, 128, .45); }
     .callout { margin-top: 36px; text-align: center; padding: 28px 20px; border-radius: var(--radius); background: var(--mint); font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 17px; line-height: 1.625; letter-spacing: -.025em; }
     .callout small { display: block; font-size: 1em; }
@@ -383,6 +385,7 @@
       .hero-lead { font-size: 24px; line-height: 1.333; font-weight: 400; }
       .hero-course .desc { font-size: 16px; line-height: 1.5; }
       .quote, .voice-quotes p { font-size: 18px; line-height: 1.556; }
+      .quote.one-line { font-size: 18px; }
       .callout { font-size: 20px; line-height: 1.4; }
       .insight-box .big { font-size: 24px; line-height: 1.333; }
       .note-card p { font-size: 16px; line-height: 1.5; }
@@ -480,7 +483,7 @@
       <div class="quote-list">
         <div class="quote">「今日、どうするの？」</div>
         <div class="quote">「学校は？」</div>
-        <div class="quote">「このままで、本当に大丈夫なのかな……」</div>
+        <div class="quote one-line">「このままで、本当に大丈夫なのかな……」</div>
       </div>
       <p>そんな不安で頭がいっぱいになり、胸が押しつぶされそうになっていませんか。</p>
       <p>学校のこと、勉強の遅れ、友達関係、そして子どもの将来。<br>朝から晩まで、気づけば子どものことばかりを考えている。</p>
