@@ -269,9 +269,12 @@
     .step-num span { font-size: 19px; }
     .step.extra .step-num { background: #fff; color: var(--teal-deep); border: 2px dashed var(--teal); font-size: 13px; }
     .step-card { background: #fff; border-radius: 14px; padding: 16px 18px; box-shadow: 0 4px 14px -8px rgba(0, 80, 80, .3); }
-    .step-card .meta { font-size: 11px; color: var(--teal); font-weight: 700; letter-spacing: .05em; line-height: 1.9; }
-    .step-card h4 { margin: 2px 0 6px; font-family: var(--mincho); font-feature-settings: "palt"; font-size: 15px; color: var(--teal-deep); line-height: 1.375; }
-    .step-card h4 small { font-size: 14px; color: var(--ink-soft); font-weight: 400; margin-left: 4px; }
+    .step-card .meta { line-height: 1; margin-bottom: 6px; }
+    .step-card .phase { display: inline-block; padding: 2px 8px; border-radius: 4px; background: var(--mint); color: var(--teal-deep); font-size: 11px; font-weight: 500; line-height: 1.6; }
+    /* STEPのタイトル（V1に合わせて英語名を大きく、日本語は（）で添える） */
+    .step-card h4 { margin: 0 0 6px; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); line-height: 1.375; }
+    .step-card h4 .en { display: block; font-size: 18px; letter-spacing: .02em; }
+    .step-card h4 .ja { display: block; font-size: 14px; font-weight: 400; color: var(--ink); white-space: nowrap; }
     .step-card p { font-size: 12px; line-height: 1.625; }
 
     .bonus {
@@ -396,7 +399,10 @@
       .note-card .final, .closing-final .catch { font-size: 30px; line-height: 1.2; }
       .message-highlight { font-size: 20px; line-height: 1.4; }
       .center-question { font-size: 22px; line-height: 1.4; }
-      .step-card h4 { font-size: 18px; line-height: 1.556; }
+      .step-card h4 { line-height: 1.556; }
+      .step-card h4 .en { display: inline; font-size: 21px; }
+      .step-card h4 .ja { display: inline; font-size: 18px; font-weight: 700; color: var(--teal-deep); margin-left: 4px; }
+      .step-card .phase { font-size: 12px; }
       .step-card p { font-size: 14px; line-height: 1.625; }
       .bonus h4 { font-size: 20px; line-height: 1.4; }
       .bonus p { font-size: 16px; line-height: 1.5; }
@@ -622,48 +628,48 @@
         <li class="step">
           <div class="step-num"><small>STEP</small><span>01</span></div>
           <div class="step-card">
-            <div class="meta">過去｜LOVE LETTER</div>
-            <h4>過去の自分と向き合う</h4>
+            <div class="meta"><span class="phase">過去</span></div>
+            <h4><span class="en">LOVE LETTER</span><span class="ja">（過去の自分と向き合う）</span></h4>
             <p>これまでの自分と向き合い、「私なら大丈夫」「この子なら大丈夫」という愛・自信・誇りの土台を取り戻します。</p>
           </div>
         </li>
         <li class="step">
           <div class="step-num"><small>STEP</small><span>02</span></div>
           <div class="step-card">
-            <div class="meta">現在｜CHANGE</div>
-            <h4>思い込みの見つめ直し</h4>
+            <div class="meta"><span class="phase">現在</span></div>
+            <h4><span class="en">CHANGE</span><span class="ja">（思い込みの見つめ直し）</span></h4>
             <p>「学校には行くべき」といった当たり前や思い込みを解きほぐし、自由な選択肢を広げていきます。</p>
           </div>
         </li>
         <li class="step extra">
           <div class="step-num">番外</div>
           <div class="step-card">
-            <div class="meta">特別編｜EXTRA STEP</div>
-            <h4>学校教育の歴史</h4>
+            <div class="meta"><span class="phase">特別編</span></div>
+            <h4><span class="en">EXTRA STEP</span><span class="ja">（学校教育の歴史）</span></h4>
             <p>わたしたちを育んできた学校教育のこれまでとこれからを考え、あたりまえを疑います。</p>
           </div>
         </li>
         <li class="step">
           <div class="step-num"><small>STEP</small><span>03</span></div>
           <div class="step-card">
-            <div class="meta">関係性｜HEART</div>
-            <h4>愛と感謝を取り戻す</h4>
+            <div class="meta"><span class="phase">関係性</span></div>
+            <h4><span class="en">HEART</span><span class="ja">（愛と感謝を取り戻す）</span></h4>
             <p>子どもを変えようとするのを手放し、愛と感謝を軸に親子のつながりをあたたかく再構築します。</p>
           </div>
         </li>
         <li class="step">
           <div class="step-num"><small>STEP</small><span>04</span></div>
           <div class="step-card">
-            <div class="meta">自己確立｜MY AXIS</div>
-            <h4>自分の軸をつくる</h4>
+            <div class="meta"><span class="phase">自己確立</span></div>
+            <h4><span class="en">MY AXIS</span><span class="ja">（自分の軸をつくる）</span></h4>
             <p>「どんな親でありたいか」「どんな人間として生きたいか」、誰の正解でもない自分だけの答えを見つけます。</p>
           </div>
         </li>
         <li class="step">
           <div class="step-num"><small>STEP</small><span>05</span></div>
           <div class="step-card">
-            <div class="meta">未来｜ALIVE</div>
-            <h4>これからの人生を生きる</h4>
+            <div class="meta"><span class="phase">未来</span></div>
+            <h4><span class="en">ALIVE</span><span class="ja">（これからの人生を生きる）</span></h4>
             <p>子どもの人生に同化するのをやめ、あなた自身の人生をもう一度動かしていきます。</p>
           </div>
         </li>
