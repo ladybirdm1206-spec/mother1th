@@ -336,6 +336,8 @@
     .closing-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
     .voice-quotes { display: grid; gap: 12px; margin: 28px 0; }
     .voice-quotes .center-left { display: block; }
+    /* スマホの2行表示：2行目の頭を「」の内側（「の幅＝0.5文字ぶん）にそろえる */
+    @media (max-width: 639px) { .voice-quotes .center-left { padding-left: .5em; text-indent: -.5em; } }
     .voice-quotes p { margin: 0; text-align: center; font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 16px; line-height: 1.625; background: var(--cream); border-radius: 14px; padding: 14px 16px; }
     .closing-final { text-align: center; margin-top: 40px; }
     .closing-final .catch { font-family: var(--mincho); font-feature-settings: "palt"; font-weight: 700; color: var(--teal-deep); font-size: 24px; line-height: 1.333; margin-bottom: 14px; }
@@ -796,9 +798,9 @@
       <h2 class="h2">不登校を<br class="sp">「失った時間」ではなく、<br>「人生を見つめ直す時間」へ</h2>
       <p>今はまだ、先が見えなくて不安かもしれません。<br>でも、あきらめないでください。</p>
       <div class="voice-quotes">
-        <p><span class="center-left">不登校と向き合ったからこそ、<br class="sp">今の私がある</span></p>
-        <p><span class="center-left">あの時間があったからこそ、<br class="sp">子どもと本当の信頼でつながれた</span></p>
-        <p><span class="center-left">あのつらい経験があったからこそ、<br class="sp">自分の人生を取り戻せた</span></p>
+        <p><span class="center-left">「不登校と向き合ったからこそ、<br class="sp">今の私がある」</span></p>
+        <p><span class="center-left">「あの時間があったからこそ、<br class="sp">子どもと本当の信頼でつながれた」</span></p>
+        <p><span class="center-left">「あのつらい経験があったからこそ、<br class="sp">自分の人生を取り戻せた」</span></p>
       </div>
       <p class="lead-center"><strong>心からそう言える日は、必ずやってきます。</strong></p>
       <p>子どものために自分を置き去りにしてきた優しいあなたへ。</p>
