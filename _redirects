@@ -1,2 +1,13 @@
-/seminar3 /seminar/ 301
-/seminar3/* /seminar/:splat 301
+# 一番上のURLは「今募集中のページ」へ移動（募集が変わったらここを書き換える）
+/  /2nd/seminar/  302
+/2nd/  /2nd/seminar/  302
+/2nd  /2nd/seminar/  302
+
+# 以前のURL → 新しいURL
+/seminar  /2nd/seminar/  301
+/seminar/*  /2nd/seminar/:splat  301
+/seminar3  /2nd/seminar/  301
+/seminar3/*  /2nd/seminar/:splat  301
+
+# 保管用（古い版）は公開しない
+/archive/*  /  302
